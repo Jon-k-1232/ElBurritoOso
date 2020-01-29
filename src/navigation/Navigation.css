@@ -1,0 +1,31 @@
+
+
+#homeLink a, .navLinks li a {
+    text-decoration: none;
+}
+
+
+#hamIcon{
+    position: absolute;
+    right: 1em;
+    top: 11px;
+    list-style: none;
+    display: inline-flex;
+    margin: 1em 0px 1em 0px;
+}
+
+
+
+    .navLinks {
+        position: absolute;
+        right: 1em;
+        top: 11px;
+        list-style: none;
+        display: inline-flex;
+        margin: 1em 0px 1em 0px;
+    }
+
+    .navLinks li {
+        margin: 0em 1em 0em 1em;
+    }
+

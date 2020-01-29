@@ -1,0 +1,24 @@
+
+.homeScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instructions{
+    display: inline-flex;
+}
+
+#instructIto, #instructRead, #instructLeave{
+    margin: 0em 1em 1em 1em;
+}
+
+#homeStatement{
+    text-align: center;
+}
+
+#searchInstruct, #readInstruct, #leaveInstruct{
+    width: 4em;
+    margin: 2em 2em 0em 2em;
+
+}
