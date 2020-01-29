@@ -2,6 +2,7 @@
 
 #homeLink a, .navLinks li a {
     text-decoration: none;
+    color: black;
 }
 
 
@@ -13,7 +14,6 @@
     display: inline-flex;
     margin: 1em 0px 1em 0px;
 }
-
 
 
     .navLinks {
@@ -29,3 +29,6 @@
         margin: 0em 1em 0em 1em;
     }
 
+#homeLink{
+    margin-left: 1em;
+}
