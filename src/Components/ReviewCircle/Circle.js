@@ -1,6 +1,6 @@
 
 import React from "react"
-import './Circle.css'
+import '../ReviewCircle/Circle.css'
 
 
 export default function Circle() {

@@ -3,6 +3,7 @@ import './home.css'
 import bino from "../images/bino.png"
 import ebook from "../images/ebook.png"
 import comment from "../images/comment.png"
+import Carousel from "../Components/carousel/Carousel.js";
 
 
 
@@ -33,15 +34,10 @@ export default function Home(){
                   <div className="instructLeave">
                       <img src={comment} alt="Leave Review" id="leaveInstruct"/>
                       <div id="instructLeave">Leave a Review</div>
-
                   </div>
               </div>
 
-
-
-
-
-
+              <Carousel/>
 
           </div>
 

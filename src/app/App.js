@@ -7,7 +7,7 @@ import review from "../review/Review.js";
 import search from "../search/Search.js";
 import Navigation from "../navigation/Navigation.js";
 import restaurant from "../restaurant/Restaurant.js";
-import Footer from "../Footer/Footer.js";
+import Footer from "../Components/Footer/Footer.js";
 import leaveReview from "../leaveReview/leaveReview.js";
 import './App.css'
 

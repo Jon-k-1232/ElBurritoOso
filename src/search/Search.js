@@ -1,7 +1,7 @@
 
 import React, {Component} from "react"
-import HitBox from "../hitBox/hitBox.js";
-import Map from "../map/Map.js";
+import HitBox from "../Components/hitBox/hitBox.js";
+import Map from "../Components/map/Map.js";
 import './Search.css'
 
 

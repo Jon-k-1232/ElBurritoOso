@@ -1,6 +1,6 @@
 
 import React from "react";
-import './hitBox.css'
+import '../hitBox/hitBox.css'
 import {Link} from "react-router-dom";
 import Circle from "../ReviewCircle/Circle.js";
 
