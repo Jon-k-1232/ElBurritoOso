@@ -1,0 +1,26 @@
+
+.searchPage{
+    min-height:100vh;
+}
+
+
+.searchForm{
+    text-align: center;
+}
+
+#searchInput{
+    width: 22em;
+    height: 4em;
+    border: solid 1px #D8D8D8;
+    outline: none;
+    background-color: #f9f9f9;
+}
+
+#searchButton{
+    background: #C62232;
+    color: #fff;
+    width: 8em;
+    height: 4em;
+    border: solid 1px #C62232;
+}
+

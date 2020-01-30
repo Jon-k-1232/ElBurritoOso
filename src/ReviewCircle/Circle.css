@@ -1,0 +1,15 @@
+
+.reviewCircle{
+    border-radius: 50%;
+    border: solid 1px black;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    width: 4em;
+    height: 4em;
+    letter-spacing: 1px;
+}
+
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'
 import App from "./app/App.js";
 import { BrowserRouter } from 'react-router-dom'
 
@@ -11,4 +11,4 @@ ReactDOM.render(
         <App />
     </BrowserRouter>,
     document.getElementById('root')
-)
+);
