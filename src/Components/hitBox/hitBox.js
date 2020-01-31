@@ -11,10 +11,9 @@ export default function HitBox() {
             <div className="hitItemContainer">
 
                         <div className="contactInfo">
-                            <h1><Link to = "/restaurant"> Restaurant Name</Link></h1>
+                            <h2><Link to = "/restaurant"> Restaurant Name</Link></h2>
                             <h4><Link to = "/restaurant"> Restaurant Address</Link></h4>
                             <p>Phone</p>
-
                         </div>
 
                     <div className="circleContainer">

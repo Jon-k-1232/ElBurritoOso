@@ -1,0 +1,19 @@
+
+.confirmReviewPage{
+    min-height: 95vh;
+}
+
+
+.confirmRating, .confirmReview{
+    margin: 2em 2em 2em 2em;
+}
+
+
+.confirmRating{
+    margin-bottom: 2em;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.confirmButtons{
+    text-align: center;
+}

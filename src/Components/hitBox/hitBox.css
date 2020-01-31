@@ -1,11 +1,16 @@
 
+
+
+
+
 .hitItemContainer{
-    margin: 2em 0em 1em 2em;
+    margin: 2em 0em 2em 2em;
     padding: 1em 0em 1em 0em;
     border-bottom: 1px solid rgb(216, 216, 216);
-    width: 20em;
+    width: 21em;
     display: inline-flex;
     align-items: center;
+    flex-direction: row;
 }
 
 

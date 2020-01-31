@@ -1,6 +1,6 @@
 
 .searchPage{
-    min-height:100vh;
+    min-height:95vh;
 }
 
 
@@ -24,3 +24,15 @@
     border: solid 1px #C62232;
 }
 
+.gradingScale{
+    margin: 1em 1em 1em 1em;
+    text-align: center;
+}
+
+
+.gradingScale p{
+    width: 7em;
+    display: inline-flex;
+    margin: 7px;
+    line-height: 21px;
+}

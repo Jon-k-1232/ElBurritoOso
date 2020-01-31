@@ -1,0 +1,54 @@
+
+.leaveReviewPage{
+    min-height: 95vh;
+}
+
+
+.scaleContainer{
+    margin: 1em 1em 1em 1em;
+    text-align: center;
+}
+
+
+.scaleContainer p{
+    width: 7em;
+    display: inline-flex;
+    margin: 7px;
+    line-height: 21px;
+}
+
+
+.newReviewForm{
+    text-align: center;
+}
+
+
+#ratingInput{
+    width: 22em;
+    height: 4em;
+    border: solid 1px #D8D8D8;
+    outline: none;
+    background-color: #f9f9f9;
+    margin: 2em 0em 2em 0em;
+}
+
+
+#reviewComment{
+    width: 81%;
+    height: 21em;
+    border: solid 1px #D8D8D8;
+    outline: none;
+    background-color: #f9f9f9;
+}
+
+
+#reviewSubButton{
+    background: #C62232;
+    color: #fff;
+    width: 8em;
+    height: 4em;
+    border: solid 1px #C62232;
+    margin: 4em;
+}
+
+

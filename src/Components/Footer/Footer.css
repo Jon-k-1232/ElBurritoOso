@@ -1,0 +1,13 @@
+
+footer{
+    background-color: dimgrey;
+}
+
+
+#twitter, #insta, #fb{
+    margin: 3em 1em 1em 8px;
+}
+
+footer p{
+    margin-left: 8px;
+}

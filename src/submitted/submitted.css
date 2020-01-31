@@ -1,0 +1,12 @@
+
+.submittedPage{
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#submitted{
+    margin: 0em 0em 3em 0em;
+}

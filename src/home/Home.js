@@ -1,8 +1,8 @@
 import React from "react"
 import './home.css'
-import bino from "../images/bino.png"
-import ebook from "../images/ebook.png"
-import comment from "../images/comment.png"
+import bino from "../Components/images/bino.png"
+import ebook from "../Components/images/ebook.png"
+import comment from "../Components/images/comment.png"
 import Carousel from "../Components/carousel/Carousel.js";
 
 
@@ -17,7 +17,9 @@ export default function Home(){
                   <h1>The best reviews of <br/> the best burritos.</h1>
               </div>
 
+              <div>
                   <h3>How it works:</h3>
+              </div>
 
               <div className="instructions">
                   <div className="instructSearch">
@@ -28,7 +30,6 @@ export default function Home(){
                   <div className="instructRead">
                       <img src={ebook} alt="Read Reviews" id="readInstruct"/>
                       <div id="instructRead">Read Reviews</div>
-
                   </div>
 
                   <div className="instructLeave">

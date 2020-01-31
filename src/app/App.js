@@ -2,10 +2,11 @@
 
 import React from 'react';
 import {Route} from 'react-router-dom';
+import submitted from "../submitted/submitted.js";
 import home from "../home/Home.js";
-import review from "../review/Review.js";
+import confirm from "../confirm/Confirm.js";
 import search from "../search/Search.js";
-import Navigation from "../navigation/Navigation.js";
+import Navigation from "../Components/navigation/Navigation.js";
 import restaurant from "../restaurant/Restaurant.js";
 import Footer from "../Components/Footer/Footer.js";
 import leaveReview from "../leaveReview/leaveReview.js";
@@ -26,10 +27,10 @@ export default class App extends React.Component{
                 <Navigation/>
                     <Route exact path= "/" component = {home} />
                     <Route path = "/search" component = {search} />
-                    <Route path = "/review" component = {review} />
-                    <Route exact path = "/review/new" component = {leaveReview}/>
-                    <Route path = "/restaurant" component = {restaurant}/>
-
+                    <Route exact path = "/restaurant" component = {restaurant}/>
+                    <Route exact path = "/restaurant/new-review" component = {leaveReview}/>
+                    <Route exact path = "/restaurant/new-review/confirm" component = {confirm} />
+                    <Route exact path = "/reviewSubmited" component = {submitted} />
                 <Footer/>
             </main>
     );
