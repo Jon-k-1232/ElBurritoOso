@@ -1,15 +1,32 @@
 
 
 import React from "react"
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 
-
-export default function Map(){
-
-    return(
-        <div>
-            <h1>Map Goes Here</h1>
-        </div>
-    );
-
+const mapStyles = {
+    width: '100%',
+    height: '29em',
+    margin: '2em 0em 0em 0em',
 }
+
+
+class Maps extends React.Component{
+
+    render() {
+        return (
+            <div className="mapContainer">
+                <Map
+                    google={this.props.google}
+                    zoom={8}
+                    style={mapStyles}
+                    initialCenter={{lat: 33.448376, lng: -112.074036}}
+                />
+            </div>
+        );
+    }
+}
+
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyB3NE69ANz_b5ciRwN0D8PalZYy353pqS4'
+})(Maps);

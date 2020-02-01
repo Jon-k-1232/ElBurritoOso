@@ -1,7 +1,7 @@
 
 import React, {Component} from "react"
 import HitBox from "../Components/hitBox/hitBox.js";
-import Map from "../Components/map/Map.js";
+import Maps from "../Components/map/Map.js";
 import './Search.css'
 
 
@@ -26,13 +26,15 @@ export default class search extends Component {
 
                 <div className="gradingScale">
                     <h3>Understanding the reviews:</h3>
-                    <p> 1.1 - 6.9 <br/>I will eat it if it is free</p>
+                    <p> 1.1 - 6.9 <br/>I will eat it if it's free</p>
                     <p> 7.1 - 7.9 <br/>I will eat it if I can walk there</p>
                     <p> 8.1 - 8.9 <br/>I will drive to eat there</p>
                     <p> 9.1 - 9.9 <br/>Life changing event (very few)</p>
                 </div>
 
-                <Map/>
+                <div className="mapBox">
+                    <Maps/>
+                </div>
 
                 <HitBox/>
                 <HitBox/>

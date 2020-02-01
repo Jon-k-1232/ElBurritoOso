@@ -1,12 +1,15 @@
 
 .searchPage{
     min-height:95vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .searchForm{
     text-align: center;
 }
+
 
 #searchInput{
     width: 22em;
@@ -15,6 +18,7 @@
     outline: none;
     background-color: #f9f9f9;
 }
+
 
 #searchButton{
     background: #C62232;
@@ -35,4 +39,10 @@
     display: inline-flex;
     margin: 7px;
     line-height: 21px;
+}
+
+
+.mapBox{
+    height: 30em;
+    width: 2em;
 }
