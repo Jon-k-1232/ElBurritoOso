@@ -19,18 +19,13 @@ header{
 }
 
 
-    .navLinks {
-        position: absolute;
-        right: 1em;
-        top: 11px;
-        list-style: none;
-        display: inline-flex;
-        margin: 1em 0px 1em 0px;
-    }
+.navLinks {
+display: none;
+}
 
-    .navLinks li {
-        margin: 0em 1em 0em 1em;
-    }
+.navLinks li {
+    margin: 0em 1em 0em 1em;
+}
 
 #homeLink{
     margin-left: 1em;
