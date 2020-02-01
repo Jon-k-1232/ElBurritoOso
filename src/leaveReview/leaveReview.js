@@ -13,7 +13,7 @@ export default function leaveReview(){
 
 
             <div className="scaleContainer">
-                <h3>Understanding reviews:</h3>
+                <h3>Understanding the reviews:</h3>
                 <p> 1.1 - 6.9 <br/>I will eat it if it is free</p>
                 <p> 7.1 - 7.9 <br/>I will eat it if I can walk there</p>
                 <p> 8.1 - 8.9 <br/>I will drive to eat there</p>

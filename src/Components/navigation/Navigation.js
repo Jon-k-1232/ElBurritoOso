@@ -4,7 +4,9 @@ import {Link} from "react-router-dom";
 import './Navigation.css'
 
 
-export default function Navigation() {
+
+export default function Navigation(){
+
 
     return (
         <header>
@@ -15,6 +17,7 @@ export default function Navigation() {
                     <li><Link to = "/search"> Leave Review </Link></li>
                 </ol>
             </nav>
+
         </header>
     );
 

@@ -1,0 +1,11 @@
+
+#photo1, #photo2, #photo3, #photo4, #photo5{
+    object-fit: cover;
+    height: 20em;
+    width: 100%;
+}
+
+.carousel.carousel-slider {
+    margin: 3em 0em 5em 0em;
+    width: 22em !important
+}

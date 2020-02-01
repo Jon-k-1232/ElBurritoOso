@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 95vh;
+    min-height: 91vh;
 }
 
 .instructions{
@@ -11,15 +11,18 @@
 }
 
 .instructSearch, .instructRead, .instructLeave{
-    margin: 0em 1em 1em 1em;
+    margin: 1em;
     text-align: center;
 }
 
-#homeStatement{
+.homeStatement{
     text-align: center;
+    margin: 2em 0em 2em 0em;
+
 }
 
 #searchInstruct, #readInstruct, #leaveInstruct{
     width: 4em;
 }
+
 

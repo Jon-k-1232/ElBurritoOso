@@ -1,9 +1,10 @@
 import React from "react"
 import './home.css'
+import PhotoCarousel from "../Components/carousel/Carousel.js";
 import bino from "../Components/images/bino.png"
 import ebook from "../Components/images/ebook.png"
 import comment from "../Components/images/comment.png"
-import Carousel from "../Components/carousel/Carousel.js";
+
 
 
 
@@ -13,7 +14,7 @@ export default function Home(){
         return(
           <div className="homeScreen">
 
-              <div id="homeStatement">
+              <div className="homeStatement">
                   <h1>The best reviews of <br/> the best burritos.</h1>
               </div>
 
@@ -38,7 +39,7 @@ export default function Home(){
                   </div>
               </div>
 
-              <Carousel/>
+              <PhotoCarousel/>
 
           </div>
 
