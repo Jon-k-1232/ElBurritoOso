@@ -9,6 +9,18 @@ import './Search.css'
 export default class search extends Component {
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     render() {
         return (
             <div className="searchPage">
