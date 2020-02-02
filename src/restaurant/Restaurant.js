@@ -10,9 +10,16 @@ import "./Restaurant.css"
 
 export default function restaurant(){
 
+
+
+
         return(
             <div className="restaurantPage">
-                <Map/>
+
+                <div className="mapBox">
+                    <Map/>
+                </div>
+
                 <RestaurantInfo/>
 
                 <div className="circleContainer">
