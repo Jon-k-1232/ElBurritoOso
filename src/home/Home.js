@@ -1,9 +1,15 @@
 import React from "react"
 import './home.css'
-import PhotoCarousel from "../Components/carousel/Carousel.js";
+import {Carousel} from "react-responsive-carousel";
 import bino from "../Components/images/bino.png"
 import ebook from "../Components/images/ebook.png"
 import comment from "../Components/images/comment.png"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import Burrito_1 from "../Components/images/Burrito_1.jpg"
+import Burrito_2 from "../Components/images/Burrito_2.jpg"
+import Burrito_3 from "../Components/images/Burrito_3.jpg"
+import Burrito_4 from "../Components/images/Burrito_4.jpg"
+import Burrito_5 from "../Components/images/Burrito_5.jpg"
 
 
 
@@ -40,7 +46,28 @@ export default class Home extends React.Component{
                     </div>
 
 
-                    <PhotoCarousel/>
+                    <Carousel className="carouselContainer"
+                        autoPlay={false}
+                        infiniteLoop={true}
+                        showThumbs={false}
+                        interval={4000}
+                    >
+                        <div>
+                            <img src={Burrito_1} alt="burrito" id="photo1"/>
+                        </div>
+                        <div>
+                            <img src={Burrito_2} alt="burrito" id="photo2"/>
+                        </div>
+                        <div>
+                            <img src={Burrito_3} alt="burrito" id="photo3"/>
+                        </div>
+                        <div>
+                            <img src={Burrito_4} alt="burrito" id="photo4"/>
+                        </div>
+                        <div>
+                            <img src={Burrito_5} alt="burrito" id="photo5"/>
+                        </div>
+                    </Carousel>
 
                 </div>
 

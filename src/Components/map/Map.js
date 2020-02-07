@@ -1,7 +1,7 @@
 
-
 import React from "react"
 import { Map, GoogleApiWrapper } from 'google-maps-react';
+
 
 
 
@@ -33,5 +33,5 @@ class Maps extends React.Component{
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyB3NE69ANz_b5ciRwN0D8PalZYy353pqS4'
+    apiKey:`${config.API_KEY}`
 })(Maps);

@@ -1,67 +1,29 @@
 
 import React, {Component} from "react"
-import HitBox from "../Components/hitBox/hitBox.js";
-
+import HitBox from "../Components/HitBox/HitBox.js";
 import './Search.css'
+import AppContext from "../Context.js";
+
+//import Circle from "../ReviewCircle/Circle.js";
 
 
 
 export default class search extends Component {
 
-constructor(props) {
-    super(props);
-    this.state = {
-        userAddress: '',
-        userLat: '',
-        userLong:'',
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-}
-
-
-
-
-// sets the value that was input into the user form and updates userAddress state.
-    handleChange(event) {
-        this.setState({userAddress: event.target.value});
-    }
-
-
-
-
-
-
-
-// Sets state to get the user Latitude and longitude for the google Places API
-    userCoordinates = (responseJson) => {
-        (this.setState({userLat:responseJson.results[0].geometry.location.lat}));
-        (this.setState({userLong:responseJson.results[0].geometry.location.lng}));
-        //(this.restaurantPull());
-    };
-
-
-
-/*
-Search form submission, running Geo Code to get the latitude/ longitude of the user address.
-Sends GeoCode api response to userCoordinate function.
- */
-    handleSubmit(event) {
-        event.preventDefault();
-        const geoCode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-        let userAddress = (this.state.userAddress);
-        let geo = geoCode + userAddress + '&key=AIzaSyB3NE69ANz_b5ciRwN0D8PalZYy353pqS4';
-        // geo endpoint confirmed to be working in postman.
-
-        fetch(geo)
-            .then(response => response.json())
-            .then(responseJson => this.userCoordinates(responseJson))
-            .catch(error => alert(error));
-    }
+    static contextType = AppContext;
 
 
 
     render() {
+        // this will make a search result(<HitBox/>) for each hit returned from search.
+        var arr=this.context.restaurants;
+        var searchHits=[];
+        for(var i=0;i<arr.length;i++){
+            searchHits.push(<HitBox
+                {...this.context.restaurants[i]}
+            />);
+        }
+
         return (
             <div className="searchPage">
                 <div>
@@ -71,7 +33,7 @@ Sends GeoCode api response to userCoordinate function.
                 <div>
                     <form className="searchForm" onSubmit={this.handleSubmit}>
                         <input id="searchInput" type="text" placeholder="input your address..."
-                                onChange={this.handleChange}/>
+                               onChange={this.handleChange}/>
                         <button type="submit" id="searchButton">Search</button>
                     </form>
                 </div>
@@ -85,11 +47,14 @@ Sends GeoCode api response to userCoordinate function.
                     <p> 9.1 - 9.9 <br/>Life changing event (very few)</p>
                 </div>
 
+                <div className="mapBox">
+                    <h1>map goes here</h1>
+                </div>
 
 
-
-                <HitBox/>
-                <HitBox/>
+                <div>
+                    {searchHits}
+                </div>
 
             </div>
         );
@@ -97,13 +62,13 @@ Sends GeoCode api response to userCoordinate function.
 }
 
 //  google video on maps https://www.youtube.com/watch?v=Pf7g32CwX_s
-
 /*
-
-import Maps from "../Components/map/Map.js";
-put maps back in once place api fixed
-                <div className="mapBox">
-                    <Maps/>
-                </div>
+import Maps from "../Components/Map/Map.js";
+<Maps/>
 
  */
+
+
+
+
+

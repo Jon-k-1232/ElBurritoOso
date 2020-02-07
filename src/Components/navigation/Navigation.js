@@ -3,8 +3,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Popup from "reactjs-popup";
 import './Navigation.css'
-import BurgerIcon from "../hamburger/BurgerIcon";
-import Menu from "../hamburger/Menu.js";
+import BurgerIcon from "./BurgerIcon.js";
+import Menu from "./Menu.js";
 
 
 

@@ -25,3 +25,24 @@
     width: 4em;
 }
 
+
+/*--------------------------------------- Carousel --------------------------------------------*/
+#photo1, #photo2, #photo3, #photo4, #photo5{
+    object-fit: contain;
+    height: 20em;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.carouselContainer .carousel.carousel-slider {
+    margin: 3em 0em 5em 0em;
+}
+
+.carouselContainer .carousel .slide{
+    background: white;
+}
+
+.carouselContainer .carousel .carousel-status{
+    display: none;
+}

@@ -1,6 +1,6 @@
 
 import React from "react";
-import "./Hamburger.css"
+import "./Navigation.css"
 import {Link} from "react-router-dom";
 
 export default ({ close }) => (
