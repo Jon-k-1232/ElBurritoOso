@@ -5,15 +5,25 @@ import AppContext from "../Context.js";
 import './Confirm.css'
 
 
-export default class leaveReview extends React.Component {
+/*
+Once backend in place submit button will post update context array (newReviews) to backend. On return of status 200,
+confirm screen will be passed will state either review submitted or error.
+ */
+
+
+
+export default class confirm extends React.Component {
 
     static contextType = AppContext;
+
+
 
     render() {
 
         const restaurant = this.context.restaurants.find(res=>res.id===parseInt(this.props.match.params.id));
         const restaurantCon= parseInt(this.props.match.params.id);
 
+        console.log(this.props)
 
         return (
             <div className="confirmReviewPage">
@@ -29,12 +39,12 @@ export default class leaveReview extends React.Component {
 
                 <div className="confirmRating">
                     <h3>Rating:</h3>
-                    <p>Rating</p>
+                    <p>{this.context.reviews.rating} (rating goes here)</p>
                 </div>
 
                 <div className="confirmReview">
                     <h3>Review:</h3>
-                    <p> review statement Review statement Here</p>
+                    <p>{this.context.reviews.review}(review statement goes here.)</p>
                 </div>
 
                 <div className="confirmButtons">

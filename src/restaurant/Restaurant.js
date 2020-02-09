@@ -7,6 +7,15 @@ import "./Restaurant.css"
 
 
 
+
+/*
+In restaurant view it will show the user the selected restaurant, a map location with marker, as well as other user reviews.
+Should the user choose to leave a review they click the leave review button.
+*/
+
+
+
+
 export default class restaurant extends React.Component {
     static contextType = AppContext;
 
@@ -17,8 +26,7 @@ export default class restaurant extends React.Component {
         const restaurantCon= parseInt(this.props.match.params.id);
 
 
-        console.log(restaurant);
-        console.log(restaurantCon);
+
         return (
             <div className="restaurantPage">
 
@@ -43,8 +51,6 @@ export default class restaurant extends React.Component {
                 </div>
 
                 {reviews.map((review,i)=><Reviews key={i} {...review}/>)}
-
-
 
             </div>
         );

@@ -1,3 +1,4 @@
+
 import React from "react"
 import './home.css'
 import {Carousel} from "react-responsive-carousel";
@@ -47,10 +48,10 @@ export default class Home extends React.Component{
 
 
                     <Carousel className="carouselContainer"
-                        autoPlay={false}
+                        autoPlay={true}
                         infiniteLoop={true}
                         showThumbs={false}
-                        interval={4000}
+                        interval={3000}
                     >
                         <div>
                             <img src={Burrito_1} alt="burrito" id="photo1"/>
@@ -75,3 +76,8 @@ export default class Home extends React.Component{
             );
         }
 }
+
+
+
+
+

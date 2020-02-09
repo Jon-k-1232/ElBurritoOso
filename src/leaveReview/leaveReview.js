@@ -5,14 +5,61 @@ import './leaveReview.css'
 import AppContext from "../Context.js";
 
 
+
+/*
+leave review allows the user to input the review statement, a score, then store to the context newReview array.
+ */
+
+
+
+
+
 export default class leaveReview extends React.Component {
     static contextType = AppContext;
 
+    constructor(props) {
+        super(props);
+        this.state = {
+                review: '',
+                rating: '',
+                restaurantId: this.props.match.params.id,
+        }
+    }
 
-    render() {
+
+
+    updateRate = (rating) => {
+        this.setState({rating:rating,
+            review:this.state.review,
+            restaurantId: this.props.match.params.id,
+        })
+    };
+
+
+
+    updateReview = (review) => {
+        this.setState({rating:this.state.rating,
+            review:review,
+            restaurantId: this.props.match.params.id,
+        })
+    };
+
+
+
+    handleAddReview = (addedReview) => {
+        this.setState({
+            newReviews: [...this.state, addedReview]
+        })
+    };
+
+
+
+
+
+    render(){
         const restaurant = this.context.restaurants.find(res=>res.id===parseInt(this.props.match.params.id));
         const restaurantCon= parseInt(this.props.match.params.id);
-        console.log(restaurant)
+
 
         return (
             <div className="leaveReviewPage">
@@ -33,12 +80,18 @@ export default class leaveReview extends React.Component {
                     <p> 9.1 - 9.9 <br/>Life changing event (very few)</p>
                 </div>
 
+                <AppContext.Provider value={{
+                    newReviews:{...this.state},
+                    addReviews:this.handleAddReview,
+                    }}>
                 <form className="newReviewForm">
-                    <input id="ratingInput" type="integer" placeholder="No rookie scores... example: 8.5"/>
-                    <input id="reviewComment" type="text" placeholder="Write a review..."/>
+                    <input id="ratingInput" type="text" placeholder="No rookie scores... example: 8.5" onChange={e => this.updateRate(e.target.value)} required/>
+                    <input id="reviewComment" type="text" placeholder="Write a review..." onChange={e => this.updateReview(e.target.value)} required/>
                     <button type="submit" id="reviewSubButton"><Link to={`/restaurant/new-review/confirm/${restaurantCon}`}>Submit</Link>
                     </button>
                 </form>
+                </AppContext.Provider>
+
 
             </div>
         );

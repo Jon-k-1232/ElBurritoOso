@@ -46,3 +46,20 @@
     height: 30em;
     width: 2em;
 }
+
+
+.hitItemContainer{
+    margin: 2em 0em 2em 2em;
+    padding: 1em 0em 1em 0em;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    width: 21em;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    z-index: 2;
+}
+
+
+.contactInfo{
+    width:16em
+}

@@ -79,6 +79,8 @@ const AppContext = React.createContext({
             rating: '6.8',
             restaurantId: 3
         }],
+    newReviews:[],
+    addReviews: () => {},
 });
 
 
