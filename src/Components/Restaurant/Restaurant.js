@@ -1,8 +1,8 @@
 import React from "react"
 import {Link} from "react-router-dom";
-import AppContext from "../Context.js";
-import Reviews from "../Components/Reviews/reviews.js";
-import Circle from "../Components/ReviewCircle/Circle.js";
+import AppContext from "../../Context.js";
+import Reviews from "../Reviews/reviews.js";
+import Circle from "../ReviewCircle/Circle.js";
 import "./Restaurant.css"
 
 

@@ -1,9 +1,9 @@
 
 import React, {Component} from "react"
 import {Link} from "react-router-dom";
-import Circle from "../Components/ReviewCircle/Circle.js";
+import Circle from "../ReviewCircle/Circle.js";
 import './Search.css'
-import AppContext from "../Context.js";
+import AppContext from "../../Context.js";
 
 
 

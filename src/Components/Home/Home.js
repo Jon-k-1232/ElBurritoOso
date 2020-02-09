@@ -2,20 +2,20 @@
 import React from "react"
 import './home.css'
 import {Carousel} from "react-responsive-carousel";
-import bino from "../Components/images/bino.png"
-import ebook from "../Components/images/ebook.png"
-import comment from "../Components/images/comment.png"
+import bino from "../images/bino.png"
+import ebook from "../images/ebook.png"
+import comment from "../images/comment.png"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
-import Burrito_1 from "../Components/images/Burrito_1.jpg"
-import Burrito_2 from "../Components/images/Burrito_2.jpg"
-import Burrito_3 from "../Components/images/Burrito_3.jpg"
-import Burrito_4 from "../Components/images/Burrito_4.jpg"
-import Burrito_5 from "../Components/images/Burrito_5.jpg"
+import Burrito_1 from "../images/Burrito_1.jpg"
+import Burrito_2 from "../images/Burrito_2.jpg"
+import Burrito_3 from "../images/Burrito_3.jpg"
+import Burrito_4 from "../images/Burrito_4.jpg"
+import Burrito_5 from "../images/Burrito_5.jpg"
 
 
 
 
-export default class Home extends React.Component{
+export default class home extends React.Component{
 
         render() {
             return (

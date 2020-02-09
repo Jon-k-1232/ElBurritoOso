@@ -1,7 +1,7 @@
 
 import React from "react"
 import {Link} from "react-router-dom";
-import AppContext from "../Context.js";
+import AppContext from "../../Context.js";
 import './Confirm.css'
 
 
