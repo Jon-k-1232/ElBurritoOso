@@ -8,9 +8,9 @@ import AppContext from "../../Context.js";
 
 
 /*
-this is the search screen. user input thier location into search, there will be an API call to backend. Backend will
+this is the search screen. user input their location into search, there will be an API call to backend. Backend will
 send back Json data with the hits. The hits will update a map with markers, and also display a list of search hits with
-user review. Once user selects a restraunt they will click either data on marker or hit list item. that will take them to
+user review. Once user selects a restaurant they will click either data on marker or hit list item. that will take them to
 the next page Restaurant.
  */
 
@@ -63,6 +63,7 @@ export default class search extends Component {
                     <p> 9.1 - 9.9 <br/>Life changing event (very few)</p>
                 </div>
 
+
                 <div className="mapBox">
                     <h1>map goes here</h1>
                 </div>
@@ -76,6 +77,9 @@ export default class search extends Component {
         );
     }
 }
+
+
+
 
 //  google video on maps https://www.youtube.com/watch?v=Pf7g32CwX_s
 /*
