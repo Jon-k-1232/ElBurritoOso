@@ -64,5 +64,5 @@ import Map from "../Components/Map/Map.js";
                 <div className="mapBox">
                     <Map/>
                 </div>
-                'AIzaSyB3NE69ANz_b5ciRwN0D8PalZYy353pqS4'
+                'api key here'
  */
