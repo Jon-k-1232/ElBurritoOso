@@ -9,12 +9,11 @@ import Menu from "./Menu.js";
 
 
 const styles = {
-    fontFamily: "sans-serif",
     textAlign: "center",
     marginTop: "40px"
 };
 const contentStyle = {
-    background: "rgba(255,255,255,0",
+    background: "#ff4700f2;",
     width: "80%",
     border: "none"
 };
@@ -28,6 +27,7 @@ export default function Navigation(){
     return (
         <header>
             <h2 id="homeLink"><Link to = "/"> El Burrito Oso </Link> </h2>
+
             <nav>
                 <ol className="navLinks">
                     <li><Link to = "/search"> Find Burritos </Link></li>
@@ -37,7 +37,7 @@ export default function Navigation(){
                 <div style={styles}>
                     <Popup
                         modal
-                        overlayStyle={{ background: "rgba(255,255,255,0.98" }}
+                        overlayStyle={{ background: "#ff4700f2;" }}
                         contentStyle={contentStyle}
                         closeOnDocumentClick={false}
                         trigger={open => <BurgerIcon open={open} />}

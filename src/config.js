@@ -1,5 +1,5 @@
 
 export default {
-  API_ENDPOINT: 'no_input_yet',
+  API_ENDPOINT: 'http://localhost:8000',
   API_KEY: process.env.REACT_APP_API_KEY
 }

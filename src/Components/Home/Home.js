@@ -21,29 +21,41 @@ export default class home extends React.Component{
             return (
                 <div className="homeScreen">
 
-                    <div className="homeStatement">
-                        <h1>The best reviews of <br/> the best burritos.</h1>
+                    <div className='welcome'>
+                        <div className="homeStatement">
+                            <h1>The best reviews of <br/> the best burritos.</h1>
+                        </div>
+
                     </div>
+
+
+
+                    <div className="action">
+                        <div>
+                            <h2>How it works:</h2>
+                        </div>
+
+                        <div className="instructions">
+                            <div className="instructSearch">
+                                <img src={bino} alt="search" id="searchInstruct"/>
+                                <h3 id="instructIto">Find a Burrito</h3>
+                            </div>
+
+                            <div className="instructRead">
+                                <img src={ebook} alt="Read Reviews" id="readInstruct"/>
+                                <h3 id="instructRead">Read Reviews</h3>
+                            </div>
+
+                            <div className="instructLeave">
+                                <img src={comment} alt="Leave Review" id="leaveInstruct"/>
+                                <h3 id="instructLeave">Leave a Review</h3>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div>
-                        <h3>How it works:</h3>
-                    </div>
-
-                    <div className="instructions">
-                        <div className="instructSearch">
-                            <img src={bino} alt="search" id="searchInstruct"/>
-                            <div id="instructIto">Find a Burrito</div>
-                        </div>
-
-                        <div className="instructRead">
-                            <img src={ebook} alt="Read Reviews" id="readInstruct"/>
-                            <div id="instructRead">Read Reviews</div>
-                        </div>
-
-                        <div className="instructLeave">
-                            <img src={comment} alt="Leave Review" id="leaveInstruct"/>
-                            <div id="instructLeave">Leave a Review</div>
-                        </div>
+                        <h2>Recent User Photos:</h2>
                     </div>
 
 

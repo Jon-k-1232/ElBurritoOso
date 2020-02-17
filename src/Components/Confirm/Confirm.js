@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../../Context";
-
+import config from "../../config.js"
 import "./Confirm.css";
 
 /*
@@ -10,12 +10,40 @@ confirm screen will be passed will state either review submitted or error.
  */
 
 export default class confirm extends React.Component {
-  /*
-    reviewSend = (userData) =>{
-        // api push to backend
 
-    }
-    */
+
+    addNoteRequest = (tempReview,callback) => {
+
+        const newReview = {
+            restaurantId: `${tempReview.restaurantId}`,
+            review: `${tempReview.review}`,
+            rating: `${tempReview.rating}`,
+        };
+
+        fetch(`${config.API_ENDPOINT}/reviews/submit`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newReview) // getting c at position 0 error tried JSON.parse(JSON.stringify(newReview)) which ended in cors reject
+        })
+            .then(res => {
+                //if (!res.ok) {
+                    //return res.json().then(error => {
+                        //throw error
+                    //})
+                //}
+                return res.json()
+            })
+            .then(addedReview => {
+                callback(addedReview);
+            })
+            //.catch(error => alert(error))
+
+    };
+
+
+
 
   static contextType = AppContext;
 
@@ -33,12 +61,12 @@ export default class confirm extends React.Component {
 
         <div className="confirmRating">
           <h3>Rating:</h3>
-          <p>{tempReview.rating} (rating goes here)</p>
+          <p>{tempReview.rating}</p>
         </div>
 
         <div className="confirmReview">
           <h3>Review:</h3>
-          <p>{tempReview.review}(review statement goes here.)</p>
+          <p>{tempReview.review}</p>
         </div>
 
         <div className="confirmButtons">
@@ -49,7 +77,7 @@ export default class confirm extends React.Component {
           </button>
 
           <button type="submit" id="reviewSubButton">
-            <Link to="/reviewSubmited" onClick={() => {}}>
+            <Link to="/reviewSubmited" onClick={this.addNoteRequest(tempReview)}>
               confirm
             </Link>
           </button>

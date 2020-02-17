@@ -1,6 +1,12 @@
 
+
+
+
 header{
-    background-color: dimgrey;
+    background-color: #ff3d03fa;
+    height: 5em;
+    position: fixed;
+    width: 100%;
 }
 
 #homeLink a, .navLinks li a {
@@ -29,6 +35,9 @@ display: none;
 
 #homeLink{
     margin-left: 1em;
+    font-family: 'Lakki Reddy', cursive;
+    letter-spacing: 2px;
+    font-size: 29px;
 }
 
 
@@ -100,6 +109,9 @@ display: none;
     margin: 1.5em 0px;
     padding: 0;
     cursor: pointer;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 4px;
+    font-size: 34px;
 }
 .menu li:hover {
     color: #ff0000;
@@ -107,6 +119,7 @@ display: none;
 
 .menu li a{
     text-decoration: none;
+    color: black;
 }
 
 .popup-overlay{
@@ -115,8 +128,13 @@ display: none;
     left: 0px;
     right: 0px;
     height: 25em;
-    background: rgba(255, 255, 255, 0.98);
     display: flex;
     z-index: 999;
-    border-bottom: 1px solid rgb(216, 216, 216);
+    background: #ff4700f2;
 }
+
+
+
+
+
+
