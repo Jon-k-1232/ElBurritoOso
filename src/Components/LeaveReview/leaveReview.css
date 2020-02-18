@@ -1,56 +1,93 @@
 
 .leaveReviewPage{
-    min-height: 95vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    min-height: 91vh;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
+    background: #f3f2f0;
+    margin-top: 5em;
+    width: 100%
 }
 
 
 .scaleContainer{
-    margin: 1em 1em 1em 1em;
+    margin: 2em 1em 2em 1em;
     text-align: center;
+    color: #322885e6;
 }
 
 
 .scaleContainer p{
     width: 7em;
     display: inline-flex;
-    margin: 7px;
+    flex-direction: column;
+    margin: 15px;
     line-height: 21px;
+    font-weight: 600;
+}
+
+
+.scaleContainer span{
+    color: #E0485d;
 }
 
 
 .newReviewForm{
     text-align: center;
+    width: 100%;
+}
+
+
+.newReviewForm p{
+    font-weight: bold;
+    color: #2e8b57f5;;
 }
 
 
 #ratingInput{
-    width: 22em;
-    height: 4em;
     border: solid 1px #D8D8D8;
     outline: none;
     background-color: #f9f9f9;
     margin: 2em 0em 2em 0em;
+    width: 70%;
+}
+
+
+#ratingInput[type=number], #reviewComment[type=text]{
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px;
+    font-size: 18px;
 }
 
 
 #reviewComment{
-    width: 81%;
-    height: 21em;
     border: solid 1px #D8D8D8;
     outline: none;
     background-color: #f9f9f9;
+    height: 17em;
+    width: 80%;
 }
 
 
 #reviewSubButton{
     background: #C62232;
     color: #fff;
-    width: 8em;
-    height: 4em;
+    font-size: 1.5em;
+    width: 5em;
     border: solid 1px #C62232;
-    margin: 4em;
+    margin: 4em 1em 4em 1em;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#reviewSubButton a{
+    text-decoration: none;
+    color: #fff;
 }
 
 

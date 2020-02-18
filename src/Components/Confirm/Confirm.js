@@ -60,12 +60,12 @@ export default class confirm extends React.Component {
         </div>
 
         <div className="confirmRating">
-          <h3>Rating:</h3>
+          <h2>Rating:</h2>
           <p>{tempReview.rating}</p>
         </div>
 
         <div className="confirmReview">
-          <h3>Review:</h3>
+          <h2>Review:</h2>
           <p>{tempReview.review}</p>
         </div>
 

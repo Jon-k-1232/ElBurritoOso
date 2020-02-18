@@ -3,34 +3,70 @@
     min-height:95vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 5em;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
+    background: #f3f2f0;
 }
 
 
+#pageTitle{
+    color: #4CAA2B;
+    margin: 2em 0em 2em 0em;
+}
+
+
+
 .searchForm{
-    text-align: center;
+    display: flex;
+    width: 100%;
 }
 
 
 #searchInput{
-    width: 22em;
-    height: 4em;
+    width: 19em;
     border: solid 1px #D8D8D8;
     outline: none;
     background-color: #f9f9f9;
+    border-radius: 6px 0px 0px 6px;
 }
+
+
+#searchInput[type=text]{
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
 
 
 #searchButton{
     background: #C62232;
     color: #fff;
-    width: 8em;
-    height: 4em;
+    font-size: 19px;
     border: solid 1px #C62232;
+    border-radius: 0px 6px 6px 0px;
 }
 
+
+#searchButton[type=submit]{
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 10px;
+}
+
+
+#searchButton:hover{
+    cursor:pointer;
+    background: red;
+}
+
+
 .gradingScale{
-    margin: 1em 1em 1em 1em;
+    margin: 4em 1em 4em 1em;
     text-align: center;
 }
 
@@ -38,8 +74,14 @@
 .gradingScale p{
     width: 7em;
     display: inline-flex;
-    margin: 7px;
+    flex-direction: column;
+    margin: 15px;
     line-height: 21px;
+    font-weight: 600;
+}
+
+.gradingScale span{
+    color: #E0485d;
 }
 
 
@@ -49,18 +91,29 @@
 }
 
 
-.hitItemContainer{
-    margin: 2em 0em 2em 2em;
-    padding: 1em 0em 1em 0em;
-    border-bottom: 1px solid rgb(216, 216, 216);
-    width: 21em;
-    display: inline-flex;
+.hitsContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
-    flex-direction: row;
-    z-index: 2;
+}
+
+
+.hitItemContainer:hover{
+    background: #00634170;
+    border-radius: 5em;
 }
 
 
 .contactInfo{
-    width:16em
+    width:16em;
+    margin: 0em 2em 0em 0em;
+    z-index: 2;
+}
+
+
+.contactInfo a {
+    text-decoration: none;
+    color: #322885e6;
 }

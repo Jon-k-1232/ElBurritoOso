@@ -38,17 +38,17 @@ export default class home extends React.Component{
                         <div className="instructions">
                             <div className="instructSearch">
                                 <img src={bino} alt="search" id="searchInstruct"/>
-                                <h3 id="instructIto">Find a Burrito</h3>
+                                <h4 id="instructIto">Find a Burrito</h4>
                             </div>
 
                             <div className="instructRead">
                                 <img src={ebook} alt="Read Reviews" id="readInstruct"/>
-                                <h3 id="instructRead">Read Reviews</h3>
+                                <h4 id="instructRead">Read Reviews</h4>
                             </div>
 
                             <div className="instructLeave">
                                 <img src={comment} alt="Leave Review" id="leaveInstruct"/>
-                                <h3 id="instructLeave">Leave a Review</h3>
+                                <h4 id="instructLeave">Leave a Review</h4>
                             </div>
                         </div>
                     </div>

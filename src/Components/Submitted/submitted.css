@@ -2,9 +2,16 @@
 .submittedPage{
     display: flex;
     flex-direction: column;
-    min-height: 95vh;
     justify-content: center;
+    align-content: center;
     align-items: center;
+    min-height: 91vh;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
+    background: #f3f2f0;
+    margin-top: 5em;
+    width: 100%
+
 }
 
 #submitted{

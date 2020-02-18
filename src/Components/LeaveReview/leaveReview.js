@@ -76,55 +76,50 @@ export default class leaveReview extends React.Component {
 
     return (
       <div className="leaveReviewPage">
-        <div className="restaurantInfoContainer">
-          <div className="restaurantInfo">
-            <h2>{restaurant.name}</h2>
-            <h4>{restaurant.address}</h4>
-            <h5>{restaurant.phone}</h5>
+
+            <div className="restaurantInfoContainer">
+              <div className="restaurantInfo">
+                <h2>{restaurant.name}</h2>
+                <h4>{restaurant.address}</h4>
+                <h5>{restaurant.phone}</h5>
+              </div>
+            </div>
+
+
+          <div className="scaleContainer">
+              <h2>Understanding the reviews:</h2>
+              <p><span> 1.1 - 6.9 </span><br/>I will eat it if it's free</p>
+              <p><span> 7.1 - 7.9 </span><br/>I will eat it if I can walk there</p>
+              <p><span> 8.1 - 8.9 </span><br/>I will drive to eat there</p>
+              <p><span> 9.1 - 9.9 </span><br/>Life changing event (very few)</p>
           </div>
-        </div>
 
 
-        <div className="scaleContainer">
-          <h3>Understanding the reviews:</h3>
-          <p>
-            {" "}
-            1.1 - 6.9 <br />I will eat it if it is free
-          </p>
-          <p>
-            {" "}
-            7.1 - 7.9 <br />I will eat it if I can walk there
-          </p>
-          <p>
-            {" "}
-            8.1 - 8.9 <br />I will drive to eat there
-          </p>
-          <p>
-            {" "}
-            9.1 - 9.9 <br />
-            Life changing event (very few)
-          </p>
-        </div>
+            <form className="newReviewForm" onSubmit={this.handleSubmit}>
 
-
-        <form className="newReviewForm" onSubmit={this.handleSubmit}>
-          <input
-            id="ratingInput"
-            type="text"
-            placeholder="No rookie scores... example: 8.5"
-            onChange={e => this.updateRate(e.target.value, restaurant)}
-            required
-          />
-          <input
-            id="reviewComment"
-            type="text"
-            placeholder="Write a review..."
-            onChange={e => this.updateReview(e.target.value, restaurant)}
-            required
-          />
-          <button type="submit" id="reviewSubButton">
-            Submit
-          </button>
+                <p>Give it a score.</p>
+                <input
+                id="ratingInput"
+                type="number"
+                step="0.1"
+                min="0"
+                max="9.9"
+                placeholder="No rookie scores. ex: 8.5"
+                onChange={e => this.updateRate(e.target.value, restaurant)}
+                required
+              />
+                <p>Tell us what you think.</p>
+              <textarea
+                id="reviewComment"
+                type="text"
+                wrap="soft"
+                placeholder="Write a review..."
+                onChange={e => this.updateReview(e.target.value, restaurant)}
+                required
+              />
+              <button type="submit" id="reviewSubButton">
+                Submit
+              </button>
         </form>
       </div>
     );

@@ -1,14 +1,33 @@
 
 footer{
-    background-color: #ff3d03e3;
+    background-color: #da334afa;
     font-family: 'Fredericka the Great', cursive;
 }
 
 
 #twitter, #insta, #fb{
-    margin: 3em 1em 1em 8px;
+    margin: 2em 1em 1em 8px;
 }
 
+#twitter:hover{
+     cursor: pointer;
+     font-size: 10px;
+ }
+
+
+#insta:hover{
+    cursor: pointer;
+    font-size: 10px;
+}
+
+
+#fb:hover{
+    cursor: pointer;
+    font-size: 10px;
+}
+
+
 footer p{
-    margin-left: 8px;
+    margin: 8px;
+    font-weight: bolder;
 }

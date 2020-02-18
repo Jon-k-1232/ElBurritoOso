@@ -13,7 +13,7 @@ const styles = {
     marginTop: "40px"
 };
 const contentStyle = {
-    background: "#ff4700f2;",
+    background: "#ff4700f2",
     width: "80%",
     border: "none"
 };
@@ -37,7 +37,7 @@ export default function Navigation(){
                 <div style={styles}>
                     <Popup
                         modal
-                        overlayStyle={{ background: "#ff4700f2;" }}
+                        overlayStyle={{ background: "#ff4700f2" }}
                         contentStyle={contentStyle}
                         closeOnDocumentClick={false}
                         trigger={open => <BurgerIcon open={open} />}

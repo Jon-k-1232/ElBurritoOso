@@ -34,24 +34,25 @@ export default class restaurant extends React.Component {
                     <h1>map here</h1>
                 </div>
 
-
-                    <div className="restaurantInfo">
-                        <h2>{restaurant.name}</h2>
-                        <h4>{restaurant.address}</h4>
-                        <h5>{restaurant.phone}</h5>
+                <div className='contentContainer'>
+                    <div className="restaurantInfoContainer">
+                        <div className="restaurantInfo">
+                            <h2>{restaurant.name}</h2>
+                            <h4>{restaurant.address}</h4>
+                            <h5>{restaurant.phone}</h5>
+                        </div>
+                        <Circle rating={restaurant.rating}/>
                     </div>
 
 
-
-                <div className="circleContainer">
-                    <div id="restaurantLeave">
-                        <h5><Link to={`/restaurant/new-review/${restaurantCon}`}>Leave Review</Link></h5>
+                    <div className="circleContainer">
+                        <div id="restaurantLeave">
+                            <h5 id="nextReview"><Link to={`/restaurant/new-review/${restaurantCon}`}>Leave Review</Link></h5>
+                        </div>
                     </div>
-                    <Circle rating={restaurant.rating}/>
+
+                    {reviews.map((review,i)=><Reviews key={i} {...review}/>)}
                 </div>
-
-                {reviews.map((review,i)=><Reviews key={i} {...review}/>)}
-
             </div>
         );
     }

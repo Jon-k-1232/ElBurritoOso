@@ -29,12 +29,17 @@
 
 .instructions{
     display: inline-flex;
+    color: #322885e6;
 }
+
+
 
 .instructSearch, .instructRead, .instructLeave{
     margin: 1em;
     text-align: center;
 }
+
+
 
 .homeStatement{
     text-align: center;
@@ -50,10 +55,11 @@
 
 
 .action{
-    margin: 2em 0em 2em 0em;
+    margin: 2em 0em 5em 0em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #322885e6;;
 }
 
 

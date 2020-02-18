@@ -3,7 +3,7 @@
 
 
 header{
-    background-color: #ff3d03fa;
+    background-color: #da334afa;
     height: 5em;
     position: fixed;
     width: 100%;
@@ -113,13 +113,12 @@ display: none;
     letter-spacing: 4px;
     font-size: 34px;
 }
-.menu li:hover {
-    color: #ff0000;
-}
+
 
 .menu li a{
     text-decoration: none;
     color: black;
+    font-weight: bold;
 }
 
 .popup-overlay{
@@ -130,7 +129,7 @@ display: none;
     height: 25em;
     display: flex;
     z-index: 999;
-    background: #ff4700f2;
+    background: #da334afa;
 }
 
 

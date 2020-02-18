@@ -26,11 +26,10 @@ export default class search extends Component {
             searchHits.push(
 
                 <div className="hitItemContainer">
-
                     <div className="contactInfo">
                         <h2><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].name}</Link></h2>
                         <h4><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].address}</Link></h4>
-                        <p><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].phone}</Link></p>
+                        <h5><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].phone}</Link></h5>
                     </div>
 
                     <div className="circleContainer">
@@ -43,7 +42,7 @@ export default class search extends Component {
         return (
             <div className="searchPage">
                 <div>
-                    <h1>Search Restaurants</h1>
+                    <h1 id='pageTitle'>Discover Restaurants</h1>
                 </div>
 
                 <div>
@@ -56,11 +55,11 @@ export default class search extends Component {
 
 
                 <div className="gradingScale">
-                    <h3>Understanding the reviews:</h3>
-                    <p> 1.1 - 6.9 <br/>I will eat it if it's free</p>
-                    <p> 7.1 - 7.9 <br/>I will eat it if I can walk there</p>
-                    <p> 8.1 - 8.9 <br/>I will drive to eat there</p>
-                    <p> 9.1 - 9.9 <br/>Life changing event (very few)</p>
+                    <h2>Understanding the reviews:</h2>
+                    <p><span> 1.1 - 6.9 </span><br/>I will eat it if it's free</p>
+                    <p><span> 7.1 - 7.9 </span><br/>I will eat it if I can walk there</p>
+                    <p><span> 8.1 - 8.9 </span><br/>I will drive to eat there</p>
+                    <p><span> 9.1 - 9.9 </span><br/>Life changing event (very few)</p>
                 </div>
 
 
@@ -69,7 +68,7 @@ export default class search extends Component {
                 </div>
 
 
-                <div>
+                <div className="hitsContainer">
                     {searchHits}
                 </div>
 
