@@ -102,7 +102,7 @@ export default class leaveReview extends React.Component {
                 id="ratingInput"
                 type="number"
                 step="0.1"
-                min="0"
+                min="0.1"
                 max="9.9"
                 placeholder="No rookie scores. ex: 8.5"
                 onChange={e => this.updateRate(e.target.value, restaurant)}

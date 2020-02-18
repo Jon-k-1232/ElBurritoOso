@@ -25,20 +25,20 @@ export default class confirm extends React.Component {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newReview) // getting c at position 0 error tried JSON.parse(JSON.stringify(newReview)) which ended in cors reject
+            body: JSON.stringify(newReview)
         })
             .then(res => {
-                //if (!res.ok) {
-                    //return res.json().then(error => {
-                        //throw error
-                    //})
-                //}
+                if (!res.ok) {
+                    return res.json().then(error => {
+                        throw error
+                    })
+                }
                 return res.json()
             })
             .then(addedReview => {
                 callback(addedReview);
             })
-            //.catch(error => alert(error))
+            .catch(error => alert(error))
 
     };
 
@@ -87,17 +87,3 @@ export default class confirm extends React.Component {
   }
 }
 
-/*
-
-<div className="confirmButtons">
-    <button type="submit" id="reviewSubButton">
-        <Link to={`/restaurant/new-review/${restaurantCon}`}>back</Link>
-    </button>
-
-    <button type="submit" id="reviewSubButton">
-        <Link to="/reviewSubmited">confirm</Link>
-    </button>
-</div>
-
-
- */

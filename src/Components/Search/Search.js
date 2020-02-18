@@ -1,6 +1,7 @@
 
 import React, {Component} from "react"
 import {Link} from "react-router-dom";
+import config from "../../config.js";
 import Circle from "../ReviewCircle/Circle.js";
 import './Search.css'
 import AppContext from "../../Context.js";
@@ -15,6 +16,55 @@ the next page Restaurant.
  */
 
 export default class search extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            address: [],
+            restaurantId: [],
+            restaurantName: [],
+            restaurantAddress: [],
+            reviewRestId: [],
+            review: [],
+            rating: [],
+            data: [],
+        };
+    }
+
+// 16421 N. Tatum Blvd, Phoenix, AZ 85308
+
+    fetchRestaurants = (e) => {
+        e.preventDefault();
+        let location = (this.state.address);
+
+        fetch(`${config.API_ENDPOINT}/locations/${location}`)
+            .then(resp => resp.json())
+            .then(data => {
+                this.setState(
+                    {data: data},
+                    () => {
+                        console.log(this.state.data);
+                    })
+            })
+            .catch((error) => {
+                console.log(error, "Theres an error.")
+            })
+    };
+
+
+
+
+    addressUpdate = (userAddress) => {
+        this.setState(
+            {
+                address: userAddress,
+            },
+            () => {
+                console.log(this.state.address);
+            })
+    };
+
+
 
     static contextType = AppContext;
 
@@ -46,9 +96,9 @@ export default class search extends Component {
                 </div>
 
                 <div>
-                    <form className="searchForm" onSubmit={this.handleSubmit}>
+                    <form className="searchForm" onSubmit={this.fetchRestaurants}>
                         <input id="searchInput" type="text" placeholder="input your address..."
-                               onChange={this.handleChange}/>
+                               onChange={e => this.addressUpdate(e.target.value)}/>
                         <button type="submit" id="searchButton">Search</button>
                     </form>
                 </div>
