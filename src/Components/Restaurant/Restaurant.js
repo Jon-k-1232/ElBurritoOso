@@ -21,9 +21,9 @@ export default class restaurant extends React.Component {
 
 
     render() {
-        const restaurant = this.context.restaurants.find(res=>res.id===parseInt(this.props.match.params.id));
-        const reviews = this.context.reviews.filter(rev=>rev.restaurantId===parseInt(this.props.match.params.id));
-        const restaurantCon= parseInt(this.props.match.params.id);
+        const restaurant = this.context.restaurants.find(res=>res.id=== this.props.match.params.id);
+        const reviews = this.context.reviews.filter(rev=>rev.restaurantId===this.props.match.params.id);
+        const restaurantCon= this.props.match.params.id;
 
 
 
@@ -38,8 +38,7 @@ export default class restaurant extends React.Component {
                     <div className="restaurantInfoContainer">
                         <div className="restaurantInfo">
                             <h2>{restaurant.name}</h2>
-                            <h4>{restaurant.address}</h4>
-                            <h5>{restaurant.phone}</h5>
+                            <h4>{restaurant.vicinity}</h4>
                         </div>
                         <Circle rating={restaurant.rating}/>
                     </div>

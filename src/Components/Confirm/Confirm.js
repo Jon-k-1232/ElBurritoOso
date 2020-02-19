@@ -11,33 +11,28 @@ confirm screen will be passed will state either review submitted or error.
 
 export default class confirm extends React.Component {
 
+    static contextType = AppContext;
 
-    addNoteRequest = (tempReview,callback) => {
 
+
+    addReviewRequest = (tempReview) => {
         const newReview = {
             restaurantId: `${tempReview.restaurantId}`,
             review: `${tempReview.review}`,
             rating: `${tempReview.rating}`,
         };
 
-        fetch(`${config.API_ENDPOINT}/reviews/submit`, {
+        console.log(newReview)
+
+
+        fetch(`${config.API_ENDPOINT}`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newReview)
         })
-            .then(res => {
-                if (!res.ok) {
-                    return res.json().then(error => {
-                        throw error
-                    })
-                }
-                return res.json()
-            })
-            .then(addedReview => {
-                callback(addedReview);
-            })
+            .then(res => res.json())
             .catch(error => alert(error))
 
     };
@@ -45,7 +40,6 @@ export default class confirm extends React.Component {
 
 
 
-  static contextType = AppContext;
 
   render() {
     const { tempReview } = this.context;
@@ -54,8 +48,7 @@ export default class confirm extends React.Component {
         <div className="restaurantInfoContainer">
           <div className="restaurantInfo">
             <h2>{tempReview.name}</h2>
-            <h4>{tempReview.address}</h4>
-            <h5>{tempReview.phone}</h5>
+            <h4>{tempReview.vicinity}</h4>
           </div>
         </div>
 
@@ -76,8 +69,8 @@ export default class confirm extends React.Component {
             </Link>
           </button>
 
-          <button type="submit" id="reviewSubButton">
-            <Link to="/reviewSubmited" onClick={this.addNoteRequest(tempReview)}>
+          <button type="submit" id="reviewSubButton" onClick={e => this.addReviewRequest(tempReview)}>
+            <Link to="/reviewSubmited">
               confirm
             </Link>
           </button>

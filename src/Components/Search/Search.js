@@ -5,6 +5,7 @@ import config from "../../config.js";
 import Circle from "../ReviewCircle/Circle.js";
 import './Search.css'
 import AppContext from "../../Context.js";
+//import Maps from "../Map/Map.js";
 
 
 
@@ -21,13 +22,7 @@ export default class search extends Component {
         super(props);
         this.state = {
             address: [],
-            restaurantId: [],
-            restaurantName: [],
-            restaurantAddress: [],
-            reviewRestId: [],
-            review: [],
-            rating: [],
-            data: [],
+            apiRestaurants: [],
         };
     }
 
@@ -37,14 +32,12 @@ export default class search extends Component {
         e.preventDefault();
         let location = (this.state.address);
 
-        fetch(`${config.API_ENDPOINT}/locations/${location}`)
+        fetch(`${config.API_ENDPOINT_DATA}/${location}`)
             .then(resp => resp.json())
             .then(data => {
-                this.setState(
-                    {data: data},
-                    () => {
-                        console.log(this.state.data);
-                    })
+                this.context.apiAddRestaurants(data.results);
+                this.context.apiAddReviews(data.reviews);
+                this.setState({apiRestaurants: data}) // set this in order to cause re render for development only.
             })
             .catch((error) => {
                 console.log(error, "Theres an error.")
@@ -58,36 +51,48 @@ export default class search extends Component {
         this.setState(
             {
                 address: userAddress,
-            },
-            () => {
-                console.log(this.state.address);
             })
     };
+
+
 
 
 
     static contextType = AppContext;
 
     render() {
+
+
         // this will make a search result list for each hit returned from search.
-        var arr=this.context.restaurants;
-        var searchHits=[];
-        for(var i=0;i<arr.length;i++){
+        let arr=this.context.restaurants;
+        let searchHits=[];
+        for(let i=0;i<arr.length;i++){
             searchHits.push(
 
                 <div className="hitItemContainer">
                     <div className="contactInfo">
                         <h2><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].name}</Link></h2>
-                        <h4><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].address}</Link></h4>
-                        <h5><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].phone}</Link></h5>
+                        <h4><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].vicinity}</Link></h4>
                     </div>
 
                     <div className="circleContainer">
                         <Circle rating = {this.context.restaurants[i].rating}/>
                     </div>
+
                 </div>
             );
         }
+
+
+        const displayMap = () => {
+            if (arr.length >= 1){
+                return <div className="mapBox"><h1>Map Here</h1></div>
+            }else{
+                console.log(arr)
+            }
+        };
+
+
 
         return (
             <div className="searchPage">
@@ -113,9 +118,8 @@ export default class search extends Component {
                 </div>
 
 
-                <div className="mapBox">
-                    <h1>map goes here</h1>
-                </div>
+
+                {displayMap()}
 
 
                 <div className="hitsContainer">
