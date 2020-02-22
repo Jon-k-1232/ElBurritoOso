@@ -25,20 +25,16 @@ export default class App extends React.Component {
         this.setState({ tempReview: review }, cb);
       },
       apiAddRestaurants: (apiLocations) => {
-        this.setState({ restaurants: apiLocations },() => {console.log(this.state.restaurants);}) // sets restaurant state from api search.js
+        this.setState({ restaurants: apiLocations },() => {console.log(this.state.restaurants)}) // sets restaurant state from api search.js
       },
       apiAddReviews: (apiReviews) => {
-        this.setState({ reviews: apiReviews },() => {console.log(this.state.reviews);}) // sets review state from api search.js
+        this.setState({ reviews: apiReviews }) // sets review state from api search.js
       },
     };
   }
 
-  /*
-  componentDidMount(){
-    // call your APIs to get all reviews
-    // and all restuarants
-  }
-  */
+
+
 
   render() {
     return (

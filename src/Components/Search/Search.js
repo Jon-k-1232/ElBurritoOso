@@ -57,18 +57,33 @@ export default class search extends Component {
 
 
 
-
     static contextType = AppContext;
 
     render() {
 
-
         // this will make a search result list for each hit returned from search.
         let arr=this.context.restaurants;
         let searchHits=[];
-        for(let i=0;i<arr.length;i++){
-            searchHits.push(
+        let reviewSearch = this.context.reviews;
 
+
+        for(let i = 0; i < arr.length; i++){
+            const rateFinder = (syncId) => { // sync equals restaurant ID string
+                let sum = 0;
+                let avg = 0;
+                let reviewRate = [];
+                for(let i = 0; i < reviewSearch.length; i++){ // finds the length of data base returned reviews
+                    if(syncId === reviewSearch[i].restaurantId) { // compares the google restaurant ID to Database review restaurant ID
+                        reviewRate.push(reviewSearch[i].rating);// if the restaurant id matches db restaurant ID then pushes the integer rating onto array
+                        sum += reviewSearch[i].rating;   // adds the integers together
+                    }
+                }
+                avg = sum / reviewRate.length; // divides sum by total
+                if(reviewRate.length) console.table({sum,reviewRate,avg}); // send table on console of matches
+                return reviewRate.length ? <div className="circleContainer"><Circle rating={avg}/></div> : <div className="circleContainer"><h2>Be the first to write a review</h2></div>
+            };
+
+            searchHits.push( // iterates a new restaurant info for each hit.
                 <div className="hitItemContainer">
                     <div className="contactInfo">
                         <h2><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].name}</Link></h2>
@@ -76,7 +91,7 @@ export default class search extends Component {
                     </div>
 
                     <div className="circleContainer">
-                        <Circle rating = {this.context.restaurants[i].rating}/>
+                        {rateFinder(this.context.restaurants[i].id)}
                     </div>
 
                 </div>
@@ -84,11 +99,10 @@ export default class search extends Component {
         }
 
 
+        // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
         const displayMap = () => {
             if (arr.length >= 1){
                 return <div className="mapBox"><h1>Map Here</h1></div>
-            }else{
-                console.log(arr)
             }
         };
 
@@ -117,10 +131,7 @@ export default class search extends Component {
                     <p><span> 9.1 - 9.9 </span><br/>Life changing event (very few)</p>
                 </div>
 
-
-
                 {displayMap()}
-
 
                 <div className="hitsContainer">
                     {searchHits}
