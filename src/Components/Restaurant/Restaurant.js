@@ -21,9 +21,25 @@ export default class restaurant extends React.Component {
 
 
     render() {
-        const restaurant = this.context.restaurants.find(res=>res.id=== this.props.match.params.id);
+        const restaurant = this.context.restaurants.find(res=>res.id===this.props.match.params.id);
         const reviews = this.context.reviews.filter(rev=>rev.restaurantId===this.props.match.params.id);
         const restaurantCon= this.props.match.params.id;
+
+
+        // this will iterate through the matching reviews and output the average rating of all reviews
+        const rateAvg = (sync) => {
+            let sum = 0;
+            let avg = 0;
+            let reviewRates = [];
+
+                for (let i = 0; i < reviews.length; i++) {
+                    reviewRates.push(sync[i].rating);
+                    sum += sync[i].rating;
+                }
+                avg = sum / reviews.length;
+                return reviewRates.length ? <div className="circleContainer"><Circle rating={avg}/></div> : <div className="circleContainer"><h2>Be the first to write a review</h2></div>
+        };
+
 
 
 
@@ -40,7 +56,7 @@ export default class restaurant extends React.Component {
                             <h2>{restaurant.name}</h2>
                             <h4>{restaurant.vicinity}</h4>
                         </div>
-                        <Circle rating={restaurant.rating}/>
+                        {rateAvg({...reviews})}
                     </div>
 
 

@@ -5,7 +5,7 @@ import config from "../../config.js";
 import Circle from "../ReviewCircle/Circle.js";
 import './Search.css'
 import AppContext from "../../Context.js";
-//import Maps from "../Map/Map.js";
+import Maps from "../Map/Map.js";
 
 
 
@@ -37,6 +37,8 @@ export default class search extends Component {
             .then(data => {
                 this.context.apiAddRestaurants(data.results);
                 this.context.apiAddReviews(data.reviews);
+                this.context.apiUserLat(data.userLatLong.results[0].geometry.location.lat);
+                this.context.apiUserLng(data.userLatLong.results[0].geometry.location.lng);
                 this.setState({apiRestaurants: data}) // set this in order to cause re render for development only.
             })
             .catch((error) => {
@@ -79,9 +81,10 @@ export default class search extends Component {
                     }
                 }
                 avg = sum / reviewRate.length; // divides sum by total
-                if(reviewRate.length) console.table({sum,reviewRate,avg}); // send table on console of matches
+                //if(reviewRate.length) console.table({sum,reviewRate,avg}); // send table on console of matches
                 return reviewRate.length ? <div className="circleContainer"><Circle rating={avg}/></div> : <div className="circleContainer"><h2>Be the first to write a review</h2></div>
             };
+
 
             searchHits.push( // iterates a new restaurant info for each hit.
                 <div className="hitItemContainer">
@@ -102,10 +105,11 @@ export default class search extends Component {
         // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
         const displayMap = () => {
             if (arr.length >= 1){
-                return <div className="mapBox"><h1>Map Here</h1></div>
+                return <div className="mapBox">
+                    <Maps/>
+                </div>
             }
         };
-
 
 
         return (
@@ -131,7 +135,9 @@ export default class search extends Component {
                     <p><span> 9.1 - 9.9 </span><br/>Life changing event (very few)</p>
                 </div>
 
+
                 {displayMap()}
+
 
                 <div className="hitsContainer">
                     {searchHits}
@@ -149,6 +155,9 @@ export default class search extends Component {
 /*
 import Maps from "../Components/Map/Map.js";
 <Maps/>
+
+
+{displayMap()}
 
  */
 

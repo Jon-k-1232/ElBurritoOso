@@ -19,16 +19,24 @@ export default class App extends React.Component {
       restaurants: [],// restaurants pulled in from API
       reviews: [],// user reviews from api database that match restaurants that rendered.
       newReviews: [],
+      userLat:'',
+      userLng:'',
       addReviews: () => {},
       tempReview: {},
       setTempReview: (review, cb) => {
         this.setState({ tempReview: review }, cb);
       },
       apiAddRestaurants: (apiLocations) => {
-        this.setState({ restaurants: apiLocations },() => {console.log(this.state.restaurants)}) // sets restaurant state from api search.js
+        this.setState({ restaurants: apiLocations }) // sets restaurant state from api search.js
       },
       apiAddReviews: (apiReviews) => {
         this.setState({ reviews: apiReviews }) // sets review state from api search.js
+      },
+      apiUserLat: (lat) => {
+        this.setState({ userLat: lat }) // sets user latitude state from api search.js
+      },
+      apiUserLng: (lng) => {
+        this.setState({ userLng: lng }) // sets user longitude state from api search.js
       },
     };
   }
