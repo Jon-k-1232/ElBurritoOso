@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../../Context";
-import config from "../../config.js"
+import config from "../../config.js";
 import "./Confirm.css";
 
 /*
@@ -10,36 +10,27 @@ confirm screen will be passed will state either review submitted or error.
  */
 
 export default class confirm extends React.Component {
+  static contextType = AppContext;
 
-    static contextType = AppContext;
-
-
-
-    addReviewRequest = (tempReview) => {
-        const newReview = {
-            restaurantId: `${tempReview.restaurantId}`,
-            review: `${tempReview.review}`,
-            rating: `${tempReview.rating}`,
-        };
-
-        console.log(newReview)
-
-
-        fetch(`${config.API_ENDPOINT}`, {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newReview)
-        })
-            .then(res => res.json())
-            .catch(error => alert(error))
-
+  addReviewRequest = tempReview => {
+    const newReview = {
+      restaurantId: `${tempReview.restaurantId}`,
+      review: `${tempReview.review}`,
+      rating: `${tempReview.rating}`
     };
 
+    console.log(newReview);
 
-
-
+    fetch(`${config.API_ENDPOINT}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(newReview)
+    })
+      .then(res => res.json())
+      .catch(error => alert(error));
+  };
 
   render() {
     const { tempReview } = this.context;
@@ -69,14 +60,15 @@ export default class confirm extends React.Component {
             </Link>
           </button>
 
-          <button type="submit" id="reviewSubButton" onClick={e => this.addReviewRequest(tempReview)}>
-            <Link to="/reviewSubmited">
-              confirm
-            </Link>
+          <button
+            type="submit"
+            id="reviewSubButton"
+            onClick={e => this.addReviewRequest(tempReview)}
+          >
+            <Link to="/reviewSubmited">confirm</Link>
           </button>
         </div>
       </div>
     );
   }
 }
-

@@ -4,6 +4,9 @@ import AppContext from "../../Context.js";
 import Reviews from "../Reviews/reviews.js";
 import Circle from "../ReviewCircle/Circle.js";
 import "./Restaurant.css"
+import config from "../../config.js";
+import { StaticGoogleMap, Marker } from 'react-static-google-map';
+
 
 
 
@@ -21,9 +24,14 @@ export default class restaurant extends React.Component {
 
 
     render() {
+
         const restaurant = this.context.restaurants.find(res=>res.id===this.props.match.params.id);
         const reviews = this.context.reviews.filter(rev=>rev.restaurantId===this.props.match.params.id);
         const restaurantCon= this.props.match.params.id;
+        const lat = parseFloat(restaurant.geometry.location.lat);
+        const lng = parseFloat(restaurant.geometry.location.lng);
+
+
 
 
         // this will iterate through the matching reviews and output the average rating of all reviews
@@ -46,28 +54,39 @@ export default class restaurant extends React.Component {
         return (
             <div className="restaurantPage">
 
-                <div className="mapBox">
-                    <h1>map here</h1>
-                </div>
+                    <StaticGoogleMap size="800x800" className="imgFluid" apiKey={`${config.API_KEY}`}>
+                        <Marker
+                            label='B'
+                            location = {{lat:lat, lng:lng}}
+
+                        />
+                    </StaticGoogleMap>
+
 
                 <div className='contentContainer'>
+
                     <div className="restaurantInfoContainer">
                         <div className="restaurantInfo">
                             <h2>{restaurant.name}</h2>
                             <h4>{restaurant.vicinity}</h4>
                         </div>
-                        {rateAvg({...reviews})}
-                    </div>
-
-
-                    <div className="circleContainer">
-                        <div id="restaurantLeave">
-                            <h5 id="nextReview"><Link to={`/restaurant/new-review/${restaurantCon}`}>Leave Review</Link></h5>
+                        <div className="resButtons">
+                            {rateAvg({...reviews})}
+                             <div className="circleContainer">
+                                <div id="restaurantLeave">
+                                    <h5 id="nextReview"><Link to={`/restaurant/new-review/${restaurantCon}`}>Leave Review</Link></h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
+
+
+
                     {reviews.map((review,i)=><Reviews key={i} {...review}/>)}
+
                 </div>
+
             </div>
         );
     }

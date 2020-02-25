@@ -26,6 +26,10 @@ export default class search extends Component {
         };
     }
 
+
+    static contextType = AppContext;
+
+
 // 16421 N. Tatum Blvd, Phoenix, AZ 85308
 
     fetchRestaurants = (e) => {
@@ -35,11 +39,11 @@ export default class search extends Component {
         fetch(`${config.API_ENDPOINT_DATA}/${location}`)
             .then(resp => resp.json())
             .then(data => {
-                this.context.apiAddRestaurants(data.results);
-                this.context.apiAddReviews(data.reviews);
-                this.context.apiUserLat(data.userLatLong.results[0].geometry.location.lat);
-                this.context.apiUserLng(data.userLatLong.results[0].geometry.location.lng);
-                this.setState({apiRestaurants: data}) // set this in order to cause re render for development only.
+                this.context.apiAddRestaurants(data.results);                                  // sets google restaurants to context
+                this.context.apiAddReviews(data.reviews);                                      // sets reviews, scores from DB to context
+                this.context.apiUserLat(data.userLatLong.results[0].geometry.location.lat);    // sets latitude of address user typed in
+                this.context.apiUserLng(data.userLatLong.results[0].geometry.location.lng);    // sets longitude of address user typed in
+                this.setState({apiRestaurants: data})                                          // set this in order to cause re render for development only.
             })
             .catch((error) => {
                 console.log(error, "Theres an error.")
@@ -58,17 +62,15 @@ export default class search extends Component {
 
 
 
-
-    static contextType = AppContext;
-
     render() {
 
-        // this will make a search result list for each hit returned from search.
+
         let arr=this.context.restaurants;
         let searchHits=[];
         let reviewSearch = this.context.reviews;
 
 
+        // this will make a search result list for each hit returned from search.
         for(let i = 0; i < arr.length; i++){
             const rateFinder = (syncId) => { // sync equals restaurant ID string
                 let sum = 0;
@@ -81,7 +83,6 @@ export default class search extends Component {
                     }
                 }
                 avg = sum / reviewRate.length; // divides sum by total
-                //if(reviewRate.length) console.table({sum,reviewRate,avg}); // send table on console of matches
                 return reviewRate.length ? <div className="circleContainer"><Circle rating={avg}/></div> : <div className="circleContainer"><h2>Be the first to write a review</h2></div>
             };
 
@@ -135,9 +136,7 @@ export default class search extends Component {
                     <p><span> 9.1 - 9.9 </span><br/>Life changing event (very few)</p>
                 </div>
 
-
                 {displayMap()}
-
 
                 <div className="hitsContainer">
                     {searchHits}
@@ -148,16 +147,4 @@ export default class search extends Component {
     }
 }
 
-
-
-
-//  google video on maps https://www.youtube.com/watch?v=Pf7g32CwX_s
-/*
-import Maps from "../Components/Map/Map.js";
-<Maps/>
-
-
-{displayMap()}
-
- */
 
