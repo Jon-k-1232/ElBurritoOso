@@ -8,8 +8,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 
 
-
-
 export default class home extends React.Component{
 
         render() {
@@ -48,13 +46,6 @@ export default class home extends React.Component{
                         </div>
                     </div>
                 </div>
-
-
             );
         }
 }
-
-
-
-
-

@@ -48,5 +48,4 @@ export default function Navigation(){
             </nav>
         </header>
     );
-
 }

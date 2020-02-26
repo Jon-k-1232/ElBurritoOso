@@ -15,7 +15,12 @@ const mapStyles = {
   margin: "2em 0em 0em 0em"
 };
 
+
+
 class Maps extends React.Component {
+
+  static contextType = AppContext;
+
   constructor(props) {
     super(props);
     this.onMarkerClick = this.onMarkerClick.bind(this);
@@ -26,7 +31,7 @@ class Maps extends React.Component {
     };
   }
 
-  static contextType = AppContext;
+
 
   onMarkerClick = (props, marker, e) => {
     this.setState({
@@ -35,6 +40,8 @@ class Maps extends React.Component {
       showingInfoWindow: true
     });
   };
+
+
 
   render() {
     if (!this.props.google) {
@@ -52,7 +59,7 @@ class Maps extends React.Component {
             lng: this.context.userLng
           }}
         >
-          {this.context.restaurants.map(hitLocation => (
+          {this.context.restaurants.map(hitLocation => (    // This marker iterates through locations found and creates a marker
             <Marker
               key={hitLocation.id}
               position={{
@@ -70,6 +77,8 @@ class Maps extends React.Component {
             />
           ))}
 
+
+
           <InfoWindow
             visible={this.state.showingInfoWindow}
             marker={this.state.activeMarker}
@@ -80,8 +89,10 @@ class Maps extends React.Component {
             </div>
           </InfoWindow>
 
+
+
           <Marker
-            position={{
+            position={{                    // This marker drops a pin on location user input into search
               lat: this.context.userLat,
               lng: this.context.userLng
             }}

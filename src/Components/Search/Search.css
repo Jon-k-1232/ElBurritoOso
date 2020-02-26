@@ -1,3 +1,4 @@
+
 .searchPage {
   display: flex;
   flex-direction: column;
@@ -8,15 +9,21 @@
   background: #f3f2f0;
 }
 
+
+
 #pageTitle {
   color: #4caa2b;
   margin: 2em 0em 2em 0em;
 }
 
+
+
 .searchForm {
   display: flex;
   width: 100%;
 }
+
+
 
 #searchInput {
   width: 19em;
@@ -26,12 +33,16 @@
   border-radius: 6px 0px 0px 6px;
 }
 
+
+
 #searchInput[type="text"] {
   font-family: "Fredericka the Great", cursive;
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 14px;
 }
+
+
 
 #searchButton {
   background: #c62232;
@@ -41,6 +52,8 @@
   border-radius: 0px 6px 6px 0px;
 }
 
+
+
 #searchButton[type="submit"] {
   font-family: "Fredericka the Great", cursive;
   font-weight: 600;
@@ -48,15 +61,21 @@
   padding: 10px;
 }
 
+
+
 #searchButton:hover {
   cursor: pointer;
   background: red;
 }
 
+
+
 .gradingScale {
   margin: 2em 1em 0em 1em;
   text-align: center;
 }
+
+
 
 .gradingScale p {
   width: 7em;
@@ -67,14 +86,20 @@
   font-weight: 600;
 }
 
+
+
 .gradingScale span {
   color: #e0485d;
 }
+
+
 
 .mapBox {
   height: 500px; /* body { font-size: *em} */
   width: 100%;
 }
+
+
 
 .hitsContainer {
   display: flex;
@@ -86,6 +111,8 @@
   z-index: 2;
 }
 
+
+
 .hitItemContainer {
   width: 100%;
   display: flex;
@@ -93,7 +120,10 @@
   align-items: center;
   border-bottom: 1px solid rgb(216, 216, 216);
   text-align: center;
+  padding-bottom: 35px;
 }
+
+
 
 .hitItemContainer:hover {
   background: #00634170;
@@ -101,11 +131,15 @@
   width: 55%;
 }
 
+
+
 .contactInfo {
   width: 16em;
   margin: 0em 2em 0em 0em;
   z-index: 2;
 }
+
+
 
 .contactInfo a {
   text-decoration: none;

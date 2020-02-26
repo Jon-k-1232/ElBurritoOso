@@ -9,14 +9,9 @@ import Maps from "../Map/Map.js";
 
 
 
-/*
-this is the search screen. user input their location into search, there will be an API call to backend. Backend will
-send back Json data with the hits. The hits will update a map with markers, and also display a list of search hits with
-user review. Once user selects a restaurant they will click either data on marker or hit list item. that will take them to
-the next page Restaurant.
- */
-
 export default class search extends Component {
+
+    static contextType = AppContext;
 
     constructor(props) {
         super(props);
@@ -27,10 +22,8 @@ export default class search extends Component {
     }
 
 
-    static contextType = AppContext;
 
-
-// 16421 N. Tatum Blvd, Phoenix, AZ 85308
+//  SEARCH LOCATION:  16421 N. Tatum Blvd, Phoenix, AZ 85308
 
     fetchRestaurants = (e) => {
         e.preventDefault();
@@ -72,14 +65,14 @@ export default class search extends Component {
 
         // this will make a search result list for each hit returned from search.
         for(let i = 0; i < arr.length; i++){
-            const rateFinder = (syncId) => { // sync equals restaurant ID string
+            const rateFinder = (syncId) => {                            // sync equals restaurant ID string
                 let sum = 0;
                 let avg = 0;
                 let reviewRate = [];
-                for(let i = 0; i < reviewSearch.length; i++){ // finds the length of data base returned reviews
-                    if(syncId === reviewSearch[i].restaurantId) { // compares the google restaurant ID to Database review restaurant ID
-                        reviewRate.push(reviewSearch[i].rating);// if the restaurant id matches db restaurant ID then pushes the integer rating onto array
-                        sum += reviewSearch[i].rating;   // adds the integers together
+                for(let i = 0; i < reviewSearch.length; i++){           // finds the length of data base returned reviews
+                    if(syncId === reviewSearch[i].restaurantId) {       // compares the google restaurant ID to Database review restaurant ID
+                        reviewRate.push(reviewSearch[i].rating);        // if the restaurant id matches db restaurant ID then pushes the integer rating onto array
+                        sum += reviewSearch[i].rating;                  // adds the integers together
                     }
                 }
                 avg = sum / reviewRate.length; // divides sum by total
@@ -87,7 +80,7 @@ export default class search extends Component {
             };
 
 
-            searchHits.push( // iterates a new restaurant info for each hit.
+            searchHits.push(                                            // iterates a new restaurant info for each hit.
                 <div className="hitItemContainer">
                     <div className="contactInfo">
                         <h2><Link to={`/restaurant/${this.context.restaurants[i].id}`}>{this.context.restaurants[i].name}</Link></h2>
@@ -146,5 +139,3 @@ export default class search extends Component {
         );
     }
 }
-
-

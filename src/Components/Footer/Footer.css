@@ -5,14 +5,18 @@ footer{
 }
 
 
+
 #twitter, #insta, #fb{
     margin: 2em 1em 1em 8px;
 }
+
+
 
 #twitter:hover{
      cursor: pointer;
      font-size: 10px;
  }
+
 
 
 #insta:hover{
@@ -21,10 +25,12 @@ footer{
 }
 
 
+
 #fb:hover{
     cursor: pointer;
     font-size: 10px;
 }
+
 
 
 footer p{

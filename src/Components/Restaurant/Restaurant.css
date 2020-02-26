@@ -1,14 +1,11 @@
 
 .restaurantPage{
-    min-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 5em;
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 2px;
     background: #f3f2f0;
 }
+
 
 
 .contentContainer{
@@ -20,37 +17,6 @@
 }
 
 
-.circleContainer{
-    text-align: center;
-    margin-bottom: 1em;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-}
-
-
-#restaurantLeave{
-    border-radius: 50%;
-    background: #da334afa;
-    box-shadow: 2px 2px 3px 2px #bd2d41e6;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 19px;
-    width: 4em;
-    height: 4em;
-    letter-spacing: 1px;
-    margin-top: 1em;
-}
-
-
-#restaurantLeave:hover{
-    cursor: pointer;
-    background: #da334ac9
-}
-
 
 #nextReview a{
     text-decoration: none;
@@ -58,13 +24,16 @@
 }
 
 
+
 .restaurantInfoContainer{
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
+    border-bottom: solid 1px #d6c3c5;
+    padding-bottom: 35px;
 }
+
 
 
 .restaurantInfo{
@@ -81,15 +50,42 @@
 
 
 .resButtons{
-    display: inline-flex;
-    justify-content: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    align-self: normal;
+    text-align: center;
 }
 
 
 
 .imgFluid{
     width: 100%;
+}
+
+
+
+#leaveRvwBtn{
+    background: #C62232;
+    color: #fff;
+    font-size: 1.4em;
+    width: 5em;
+    border-radius: 14px;
+    margin: 2em 0em 3em 0em;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+
+#leaveRvwBtn a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+#leaveRvwBtn:hover{
+    cursor: pointer;
+    background: #da334ac9
 }

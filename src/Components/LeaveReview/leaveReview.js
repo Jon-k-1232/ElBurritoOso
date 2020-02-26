@@ -24,6 +24,7 @@ export default class leaveReview extends React.Component {
 
 
 
+        // Updates state with rating score. States gets passed to next screen for user to confirm
       updateRate = (rating, restaurants) => {
         this.setState(
           {
@@ -33,15 +34,13 @@ export default class leaveReview extends React.Component {
             name: restaurants.name,
             address: restaurants.address,
             phone: restaurants.phone
-          },
-          () => {
-            console.log({ ...this.state });
           }
         );
       };
 
 
 
+        // Updates state with user review text. States gets passed to next screen for user to confirm
       updateReview = (review, restaurants) => {
         this.setState(
           {
@@ -51,15 +50,13 @@ export default class leaveReview extends React.Component {
             name: restaurants.name,
             address: restaurants.address,
             phone: restaurants.phone
-          },
-          () => {
-            console.log({ ...this.state });
           }
         );
       };
 
 
 
+        // Passes state to next route, confirm review page.
       handleSubmit = (e) => {
         e.preventDefault();
         this.context.setTempReview(this.state, () => {

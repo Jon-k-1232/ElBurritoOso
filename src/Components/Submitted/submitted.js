@@ -1,9 +1,7 @@
 
-
 import React from "react"
 import {Link} from "react-router-dom";
 import "./submitted.css"
-
 
 
 
@@ -20,5 +18,4 @@ export default function submitted(){
 
         </div>
     );
-
 }

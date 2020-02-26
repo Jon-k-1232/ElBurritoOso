@@ -1,7 +1,4 @@
 
-
-
-
 header{
     background-color: #da334afa;
     height: 5em;
@@ -10,10 +7,13 @@ header{
     z-index: 99;
 }
 
+
+
 #homeLink a, .navLinks li a {
     text-decoration: none;
     color: black;
 }
+
 
 
 #hamIcon{
@@ -26,13 +26,18 @@ header{
 }
 
 
+
 .navLinks {
 display: none;
 }
 
+
+
 .navLinks li {
     margin: 0em 1em 0em 1em;
 }
+
+
 
 #homeLink{
     margin-left: 1em;
@@ -42,7 +47,6 @@ display: none;
 }
 
 
-/*----------------------------  BURGER MENU --------------------*/
 
 .burger-menu{
     position: absolute;
@@ -56,6 +60,7 @@ display: none;
 }
 
 
+
 .burger-menu.open {
     display: inline-block;
     cursor: pointer;
@@ -67,6 +72,8 @@ display: none;
     border-radius: 29px;
 }
 
+
+
 .burger-menu .bar1,
 .bar2,
 .bar3 {
@@ -77,21 +84,27 @@ display: none;
     transition: 0.4s;
 }
 
+
+
 .burger-menu.open .bar1 {
     -webkit-transform: rotate(-45deg) translate(-4px, 4px);
     transform: rotate(-45deg) translate(-4px, 4px);
 }
 
+
+
 .burger-menu.open .bar2 {
     opacity: 0;
 }
+
+
 
 .burger-menu.open .bar3 {
     -webkit-transform: rotate(45deg) translate(-6px, -6px);
     transform: rotate(45deg) translate(-6px, -6px);
 }
 
-/* Menu */
+
 
 .menu {
     width: 100%;
@@ -99,12 +112,18 @@ display: none;
     text-align: center;
     padding: 0px;
 }
+
+
+
 .menu ul {
     position: relative;
     top: 0px;
     font-size: 24px;
     padding: 0px;
 }
+
+
+
 .menu li {
     list-style: outside none none;
     margin: 1.5em 0px;
@@ -116,11 +135,14 @@ display: none;
 }
 
 
+
 .menu li a{
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
+
+
 
 .popup-overlay{
     position: fixed;

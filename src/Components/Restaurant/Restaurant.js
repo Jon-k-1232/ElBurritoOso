@@ -9,29 +9,17 @@ import { StaticGoogleMap, Marker } from 'react-static-google-map';
 
 
 
-
-
-/*
-In restaurant view it will show the user the selected restaurant, a map location with marker, as well as other user reviews.
-Should the user choose to leave a review they click the leave review button.
-*/
-
-
-
-
 export default class restaurant extends React.Component {
     static contextType = AppContext;
 
 
     render() {
 
-        const restaurant = this.context.restaurants.find(res=>res.id===this.props.match.params.id);
-        const reviews = this.context.reviews.filter(rev=>rev.restaurantId===this.props.match.params.id);
-        const restaurantCon= this.props.match.params.id;
-        const lat = parseFloat(restaurant.geometry.location.lat);
-        const lng = parseFloat(restaurant.geometry.location.lng);
-
-
+        const restaurant = this.context.restaurants.find(res=>res.id===this.props.match.params.id);         // Matches prop id to restaurant ID
+        const reviews = this.context.reviews.filter(rev=>rev.restaurantId===this.props.match.params.id);    // Locates reviews matching prop ID
+        const restaurantCon= this.props.match.params.id;                                                    // Turn prop into variable to further pass
+        const lat = parseFloat(restaurant.geometry.location.lat);                                           // Stringify restaurant latitude for static marker
+        const lng = parseFloat(restaurant.geometry.location.lng);                                           // Stringify restaurant longitude for static marker
 
 
         // this will iterate through the matching reviews and output the average rating of all reviews
@@ -50,54 +38,32 @@ export default class restaurant extends React.Component {
 
 
 
-
         return (
             <div className="restaurantPage">
 
-                    <StaticGoogleMap size="800x800" className="imgFluid" apiKey={`${config.API_KEY}`}>
-                        <Marker
-                            label='B'
-                            location = {{lat:lat, lng:lng}}
-
-                        />
-                    </StaticGoogleMap>
-
+                <StaticGoogleMap size="800x800" className="imgFluid" apiKey={`${config.API_KEY}`}>
+                    <Marker
+                        label='B'
+                        location = {{lat:lat, lng:lng}}
+                    />
+                </StaticGoogleMap>
 
                 <div className='contentContainer'>
-
                     <div className="restaurantInfoContainer">
                         <div className="restaurantInfo">
                             <h2>{restaurant.name}</h2>
                             <h4>{restaurant.vicinity}</h4>
                         </div>
                         <div className="resButtons">
+                            <button id='leaveRvwBtn'><Link to={`/restaurant/new-review/${restaurantCon}`}>Leave Review</Link></button>
                             {rateAvg({...reviews})}
-                             <div className="circleContainer">
-                                <div id="restaurantLeave">
-                                    <h5 id="nextReview"><Link to={`/restaurant/new-review/${restaurantCon}`}>Leave Review</Link></h5>
-                                </div>
-                            </div>
                         </div>
                     </div>
-
-
-
 
                     {reviews.map((review,i)=><Reviews key={i} {...review}/>)}
 
                 </div>
-
             </div>
         );
     }
 }
-
-
-
-/*
-import Map from "../Components/Map/Map.js";
-                <div className="mapBox">
-                    <Map/>
-                </div>
-                'api key here'
- */
