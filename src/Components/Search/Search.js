@@ -29,8 +29,20 @@ export default class search extends Component {
         e.preventDefault();
         let location = (this.state.address);
 
-        fetch(`${config.API_ENDPOINT_DATA}/${location}`)
-            .then(resp => resp.json())
+        fetch(`${config.API_ENDPOINT_DATA}/${location}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY2}`
+            }
+        })
+            .then(resp => {
+                if (!resp.ok) {
+                    throw new Error(resp.status)
+                }
+                return resp.json()
+            })
+
             .then(data => {
                 this.context.apiAddRestaurants(data.results);                                  // sets google restaurants to context
                 this.context.apiAddReviews(data.reviews);                                      // sets reviews, scores from DB to context
@@ -139,3 +151,31 @@ export default class search extends Component {
         );
     }
 }
+
+
+/*
+fetchRestaurants = (e) => {
+    e.preventDefault();
+    let location = (this.state.address);
+
+    fetch(`${config.API_ENDPOINT_DATA}/${location}`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': `Bearer ${config.API_KEY2}`
+        }
+    })
+        .then(resp => resp.json())
+        .then(data => {
+            this.context.apiAddRestaurants(data.results);                                  // sets google restaurants to context
+            this.context.apiAddReviews(data.reviews);                                      // sets reviews, scores from DB to context
+            this.context.apiUserLat(data.userLatLong.results[0].geometry.location.lat);    // sets latitude of address user typed in
+            this.context.apiUserLng(data.userLatLong.results[0].geometry.location.lng);    // sets longitude of address user typed in
+            this.setState({apiRestaurants: data})                                          // set this in order to cause re render for development only.
+        })
+        .catch((error) => {
+            console.log(error, "Theres an error.")
+        })
+};
+
+ */

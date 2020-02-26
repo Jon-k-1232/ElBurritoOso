@@ -4,13 +4,14 @@ import AppContext from "../../Context";
 import config from "../../config.js";
 import "./Confirm.css";
 
-/*
-Once backend in place submit button will post update context array (newReviews) to backend. On return of status 200,
-confirm screen will be passed will state either review submitted or error.
- */
+
 
 export default class confirm extends React.Component {
+
   static contextType = AppContext;
+
+
+
 
   addReviewRequest = tempReview => {
     const newReview = {
@@ -19,18 +20,22 @@ export default class confirm extends React.Component {
       rating: `${tempReview.rating}`
     };
 
-    console.log(newReview);
+
 
     fetch(`${config.API_ENDPOINT}`, {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        'Authorization': `Bearer ${config.API_KEY2}`
       },
       body: JSON.stringify(newReview)
     })
       .then(res => res.json())
       .catch(error => alert(error));
   };
+
+
+
 
   render() {
     const { tempReview } = this.context;
