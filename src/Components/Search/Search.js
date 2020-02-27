@@ -33,7 +33,8 @@ export default class Search extends Component {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_KEY2}`
+                'Authorization': `Bearer ${config.API_KEY2}`,
+                'Origin': `${config.FRONT_WEB}`
             }
         })
             .then(resp => {
