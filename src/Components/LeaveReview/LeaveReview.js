@@ -1,13 +1,13 @@
 
 import React from "react";
-import "./leaveReview.css";
+import "./LeaveReview.css";
 import AppContext from "../../Context.js";
 
-/*
-leave review allows the user to input the review statement, a score, then store to the context newReview array.
- */
 
-export default class leaveReview extends React.Component {
+
+
+
+export default class LeaveReview extends React.Component {
   static contextType = AppContext;
 
       constructor(props) {

@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import submitted from "../Components/Submitted/submitted.js";
-import home from "../Components/Home/Home.js";
-import confirm from "../Components/Confirm/Confirm.js";
-import search from "../Components//Search/Search.js";
+import Submitted from "../Components/Submitted/Submitted.js";
+import Home from "../Components/Home/Home.js";
+import Confirm from "../Components/Confirm/Confirm.js";
+import Search from "../Components//Search/Search.js";
 import Navigation from "../Components/Navigation/Navigation.js";
-import restaurant from "../Components//Restaurant/Restaurant.js";
+import Restaurant from "../Components//Restaurant/Restaurant.js";
 import Footer from "../Components/Footer/Footer.js";
-import leaveReview from "../Components/LeaveReview/leaveReview.js";
+import LeaveReview from "../Components/LeaveReview/LeaveReview.js";
 import "./App.css";
 import AppContext from "../Context";
 
@@ -52,21 +52,21 @@ export default class App extends React.Component {
           <BrowserRouter>
             <Navigation />
             <Switch>
-              <Route exact path="/" component={home} />
-              <Route path="/search" component={search} />
+              <Route exact path="/" component={Home} />
+              <Route path="/search" component={Search} />
               <Route
                 exact
                 path="/restaurant/confirm-review"
-                component={confirm}
+                component={Confirm}
               />
-              <Route exact path="/restaurant/:id" component={restaurant} />
+              <Route exact path="/restaurant/:id" component={Restaurant} />
 
               <Route
                 exact
                 path="/restaurant/new-review/:id"
-                component={leaveReview}
+                component={LeaveReview}
               />
-              <Route path="/reviewSubmited" component={submitted} />
+              <Route path="/reviewSubmited" component={Submitted} />
             </Switch>
             <Footer />
           </BrowserRouter>

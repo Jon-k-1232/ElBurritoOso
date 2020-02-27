@@ -6,7 +6,7 @@ import "./Confirm.css";
 
 
 
-export default class confirm extends React.Component {
+export default class Confirm extends React.Component {
 
   static contextType = AppContext;
 

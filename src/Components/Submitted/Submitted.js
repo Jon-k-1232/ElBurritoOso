@@ -1,11 +1,11 @@
 
 import React from "react"
 import {Link} from "react-router-dom";
-import "./submitted.css"
+import "./Submitted.css"
 
 
 
-export default function submitted(){
+export default function Submitted(){
 
     return(
         <div className="submittedPage">

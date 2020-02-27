@@ -9,7 +9,7 @@ import Maps from "../Map/Map.js";
 
 
 
-export default class search extends Component {
+export default class Search extends Component {
 
     static contextType = AppContext;
 

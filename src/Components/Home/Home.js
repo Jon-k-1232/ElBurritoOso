@@ -1,6 +1,6 @@
 
 import React from "react"
-import './home.css'
+import './Home.css'
 import bino from "../images/bino.png"
 import ebook from "../images/ebook.png"
 import comment from "../images/comment.png"
@@ -8,7 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 
 
-export default class home extends React.Component{
+export default class Home extends React.Component{
 
         render() {
             return (
