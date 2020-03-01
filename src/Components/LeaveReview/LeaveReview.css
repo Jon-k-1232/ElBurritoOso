@@ -3,13 +3,13 @@
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 2px;
     background: #f3f2f0;
-    margin-top: 5em;
+    margin-top: 80px;
 }
 
 
 
 .scaleContainer{
-    margin: 2em 1em 2em 1em;
+    margin: 32px 16px 32px 16px;
     text-align: center;
     color: #322885e6;
 }
@@ -17,7 +17,7 @@
 
 
 .scaleContainer p{
-    width: 7em;
+    width: 112px;
     display: inline-flex;
     flex-direction: column;
     margin: 15px;
@@ -36,6 +36,9 @@
 .newReviewForm{
     text-align: center;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -51,7 +54,7 @@
     border: solid 1px #D8D8D8;
     outline: none;
     background-color: #f9f9f9;
-    margin: 2em 0em 2em 0em;
+    margin: 32px 0px 32px 0px;
     width: 70%;
 }
 
@@ -71,7 +74,7 @@
     border: solid 1px #D8D8D8;
     outline: none;
     background-color: #f9f9f9;
-    height: 17em;
+    height: 272px;
     width: 80%;
 }
 
@@ -80,10 +83,10 @@
 #reviewSubButton{
     background: #C62232;
     color: #fff;
-    font-size: 1.5em;
-    width: 5em;
+    font-size: 24px;
+    width: 130px;
     border: solid 1px #C62232;
-    margin: 4em 1em 4em 1em;
+    margin: 64px 16px 64px 16px;
     font-family: 'Fredericka the Great', cursive;
     font-weight: bold;
     letter-spacing: 2px;
@@ -96,4 +99,20 @@
     color: #fff;
 }
 
+
+
+
+/******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
+
+
+
+@media only screen and (min-width: 900px) {
+
+
+    .leaveReviewPage{
+        min-height: 90.2vh;
+    }
+
+
+}
 

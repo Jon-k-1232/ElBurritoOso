@@ -17,8 +17,9 @@ export default class Search extends Component {
     };
   }
 
-  //  SEARCH LOCATION:  16421 N. Tatum Blvd, Phoenix, AZ 85308
 
+
+  // Call to backend to get restaurants and user reviews
   fetchRestaurants = e => {
     e.preventDefault();
     let location = this.state.address;
@@ -52,13 +53,20 @@ export default class Search extends Component {
       .catch(error => {
         console.log(error, "Theres an error.");
       });
+
   };
+
+
+
 
   addressUpdate = userAddress => {
     this.setState({
       address: userAddress
     });
   };
+
+
+
 
   render() {
     let arr = this.context.restaurants;
@@ -115,19 +123,26 @@ export default class Search extends Component {
       );
     }
 
+
+
     // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
     const displayMap = () => {
       if (arr.length >= 1) {
         return (
           <div className="mapBox">
-            <Maps />
+            <Maps/>
           </div>
         );
       }
     };
 
+
+
+
+
+
     return (
-      <div className="searchPage">
+      <main className="searchPage">
         <div>
           <h1 id="pageTitle">Discover Restaurants</h1>
         </div>
@@ -170,34 +185,7 @@ export default class Search extends Component {
         {displayMap()}
 
         <div className="hitsContainer">{searchHits}</div>
-      </div>
+      </main>
     );
   }
 }
-
-/*
-fetchRestaurants = (e) => {
-    e.preventDefault();
-    let location = (this.state.address);
-
-    fetch(`${config.API_ENDPOINT_DATA}/${location}`, {
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json',
-            'Authorization': `Bearer ${config.API_KEY2}`
-        }
-    })
-        .then(resp => resp.json())
-        .then(data => {
-            this.context.apiAddRestaurants(data.results);                                  // sets google restaurants to context
-            this.context.apiAddReviews(data.reviews);                                      // sets reviews, scores from DB to context
-            this.context.apiUserLat(data.userLatLong.results[0].geometry.location.lat);    // sets latitude of address user typed in
-            this.context.apiUserLng(data.userLatLong.results[0].geometry.location.lng);    // sets longitude of address user typed in
-            this.setState({apiRestaurants: data})                                          // set this in order to cause re render for development only.
-        })
-        .catch((error) => {
-            console.log(error, "Theres an error.")
-        })
-};
-
- */

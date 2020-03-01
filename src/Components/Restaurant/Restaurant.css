@@ -1,9 +1,10 @@
 
 .restaurantPage{
-    margin-top: 5em;
+    margin-top: 80px;
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 2px;
     background: #f3f2f0;
+    min-height: 90vh;
 }
 
 
@@ -37,7 +38,7 @@
 
 
 .restaurantInfo{
-    margin-top: 1em;
+    margin-top: 16px;
 }
 
 
@@ -60,6 +61,8 @@
 
 .imgFluid{
     width: 100%;
+    margin-top: 11px;
+    box-shadow: 0px 1px 10px 1px #a2a2a0;
 }
 
 
@@ -67,8 +70,8 @@
 #leaveRvwBtn{
     background: #C62232;
     color: #fff;
-    font-size: 1.4em;
-    width: 5em;
+    font-size: 23px;
+    width: 130px;
     border-radius: 14px;
     margin: 2em 0em 3em 0em;
     font-family: 'Fredericka the Great', cursive;
@@ -89,3 +92,32 @@
     cursor: pointer;
     background: #da334ac9
 }
+
+
+
+
+/******************************\\\\\\\\\\  TABLET  /////////******************************/
+
+
+
+@media only screen and (min-width: 550px) {
+
+    .restaurantPage{
+        text-align: center;
+    }
+
+
+    .imgFluid {
+        height: 600px;
+        width: fit-content;
+    }
+
+}
+
+
+
+
+
+
+
+

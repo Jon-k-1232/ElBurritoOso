@@ -8,14 +8,14 @@ import "./Submitted.css"
 export default function Submitted(){
 
     return(
-        <div className="submittedPage">
+        <main className="submittedPage">
 
             <h1 id="submitted">Review Submitted.</h1>
 
             <button type="submit" id="reviewSubButton">
-                <Link to = "/">Home</Link>
+                <Link to = "/search">Home</Link>
             </button>
 
-        </div>
+        </main>
     );
 }

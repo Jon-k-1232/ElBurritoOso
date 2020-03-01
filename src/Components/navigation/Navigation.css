@@ -1,158 +1,46 @@
 
 header{
     background-color: #da334afa;
-    height: 5em;
+    height: 80px;
     position: fixed;
     width: 100%;
     z-index: 99;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
 }
 
 
 
-#homeLink a, .navLinks li a {
+#homeLink a, #searchMenu a {
     text-decoration: none;
     color: black;
-}
-
-
-
-#hamIcon{
-    position: absolute;
-    right: 1em;
-    top: 11px;
-    list-style: none;
-    display: inline-flex;
-    margin: 1em 0px 1em 0px;
-}
-
-
-
-.navLinks {
-display: none;
-}
-
-
-
-.navLinks li {
-    margin: 0em 1em 0em 1em;
 }
 
 
 
 #homeLink{
-    margin-left: 1em;
-    font-family: 'Lakki Reddy', cursive;
-    letter-spacing: 2px;
+    margin-left: 10px;
     font-size: 29px;
 }
 
 
 
-.burger-menu{
-    position: absolute;
-    display: inline-block;
-    cursor: pointer;
-    right: 20px;
-    top: 1em;
-    z-index: 9999;
-    padding: 10px;
-    border-radius: 29px;
+#searchMenu{
+    margin-right: 10px;
 }
 
 
 
-.burger-menu.open {
-    display: inline-block;
-    cursor: pointer;
-    position: fixed;
-    right: 20px;
-    top: 1em;
-    z-index: 9999;
-    padding: 10px;
-    border-radius: 29px;
-}
-
-
-
-.burger-menu .bar1,
-.bar2,
-.bar3 {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-
-
-.burger-menu.open .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
-    transform: rotate(-45deg) translate(-4px, 4px);
-}
-
-
-
-.burger-menu.open .bar2 {
-    opacity: 0;
-}
-
-
-
-.burger-menu.open .bar3 {
-    -webkit-transform: rotate(45deg) translate(-6px, -6px);
-    transform: rotate(45deg) translate(-6px, -6px);
-}
-
-
-
-.menu {
+.navItems{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    display: block;
-    text-align: center;
-    padding: 0px;
 }
 
 
 
-.menu ul {
-    position: relative;
-    top: 0px;
-    font-size: 24px;
-    padding: 0px;
-}
 
-
-
-.menu li {
-    list-style: outside none none;
-    margin: 1.5em 0px;
-    padding: 0;
-    cursor: pointer;
-    font-family: 'Fredericka the Great', cursive;
-    letter-spacing: 4px;
-    font-size: 28px;
-}
-
-
-
-.menu li a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-
-
-.popup-overlay{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 25em;
-    display: flex;
-    z-index: 999;
-}
 
 
 

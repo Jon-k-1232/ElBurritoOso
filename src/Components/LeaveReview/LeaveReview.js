@@ -17,8 +17,7 @@ export default class LeaveReview extends React.Component {
           rating: "",
           restaurantId: this.props.match.params.id,
           name: "",
-          address: "",
-          phone: ""
+          vicinity: "",
         };
       }
 
@@ -32,8 +31,8 @@ export default class LeaveReview extends React.Component {
             review: this.state.review,
             restaurantId: this.props.match.params.id,
             name: restaurants.name,
-            address: restaurants.address,
-            phone: restaurants.phone
+            vicinity: restaurants.vicinity,
+
           }
         );
       };
@@ -48,8 +47,7 @@ export default class LeaveReview extends React.Component {
             review: review,
             restaurantId: this.props.match.params.id,
             name: restaurants.name,
-            address: restaurants.address,
-            phone: restaurants.phone
+            vicinity: restaurants.vicinity,
           }
         );
       };
@@ -59,7 +57,7 @@ export default class LeaveReview extends React.Component {
         // Passes state to next route, confirm review page.
       handleSubmit = (e) => {
         e.preventDefault();
-        this.context.setTempReview(this.state, () => {
+        this.context.setTempReview({...this.state}, () => {
           this.props.history.push("/restaurant/confirm-review");
         });
       };
@@ -70,7 +68,7 @@ export default class LeaveReview extends React.Component {
     const restaurant = this.context.restaurants.find(res => res.id === this.props.match.params.id);
 
     return (
-      <div className="leaveReviewPage">
+      <main className="leaveReviewPage">
 
             <div className="restaurantInfoContainer">
               <div className="restaurantInfo">
@@ -115,7 +113,7 @@ export default class LeaveReview extends React.Component {
                 Submit
               </button>
         </form>
-      </div>
+      </main>
     );
   }
 }

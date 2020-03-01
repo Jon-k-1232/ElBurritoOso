@@ -21,17 +21,22 @@ export default class Confirm extends React.Component {
     };
 
 
-
+// Post request to send data back to backend
     fetch(`${config.API_ENDPOINT}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        'Authorization': `Bearer ${config.API_KEY2}`
+        Authorization: `Bearer ${config.API_KEY2}`,
+        Origin: `${config.FRONT_WEB}`
       },
       body: JSON.stringify(newReview)
     })
       .then(res => res.json())
       .catch(error => alert(error));
+
+
+    this.context.apiAddRestaurants([])        // sets context restaurants back to 0
+
   };
 
 
@@ -39,8 +44,9 @@ export default class Confirm extends React.Component {
 
   render() {
     const { tempReview } = this.context;
+
     return (
-      <div className="confirmReviewPage">
+      <main className="confirmReviewPage">
         <div className="restaurantInfoContainer">
           <div className="restaurantInfo">
             <h2>{tempReview.name}</h2>
@@ -73,7 +79,7 @@ export default class Confirm extends React.Component {
             <Link to="/reviewSubmited">confirm</Link>
           </button>
         </div>
-      </div>
+      </main>
     );
   }
 }

@@ -39,7 +39,7 @@ export default class Restaurant extends React.Component {
 
 
         return (
-            <div className="restaurantPage">
+            <main className="restaurantPage">
 
                 <StaticGoogleMap size="800x800" className="imgFluid" apiKey={`${config.API_KEY}`}>
                     <Marker
@@ -63,7 +63,7 @@ export default class Restaurant extends React.Component {
                     {reviews.map((review,i)=><Reviews key={i} {...review}/>)}
 
                 </div>
-            </div>
+            </main>
         );
     }
 }

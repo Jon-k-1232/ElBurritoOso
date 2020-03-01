@@ -8,13 +8,6 @@ import '../Map/Map.css'
 
 
 
-const mapStyles = {
-  position: "relative",
-  width: "100%",
-  height: "29em",
-  margin: "2em 0em 0em 0em"
-};
-
 
 
 class Maps extends React.Component {
@@ -27,7 +20,7 @@ class Maps extends React.Component {
     this.state = {
       selectedRestaurant: "",
       activeMarker: {},
-      showingInfoWindow: false
+      showingInfoWindow: false,
     };
   }
 
@@ -48,15 +41,22 @@ class Maps extends React.Component {
       return <div>Loading...</div>;
     }
 
+
+    const userLat = this.context.userLat;
+    const userLng= this.context.userLng;
+
+
+
     return (
       <div className="mapContainer">
+
         <Map
           google={this.props.google}
           zoom={12}
           style={mapStyles}
           initialCenter={{
-            lat: this.context.userLat,
-            lng: this.context.userLng
+            lat: userLat,
+            lng: userLng
           }}
         >
           {this.context.restaurants.map(hitLocation => (    // This marker iterates through locations found and creates a marker
@@ -92,9 +92,9 @@ class Maps extends React.Component {
 
 
           <Marker
-            position={{                    // This marker drops a pin on location user input into search
-              lat: this.context.userLat,
-              lng: this.context.userLng
+            position={{       // This marker drops a pin on location user input into search
+              lat: userLat,
+              lng: userLng
             }}
             icon={{
               url: pin,
@@ -102,11 +102,23 @@ class Maps extends React.Component {
             }}
           />
 
+
         </Map>
       </div>
     );
   }
 }
+
+
+const mapStyles = {
+  position: "relative",
+  width: "100%",
+  height: "29em",
+  margin: "32px 0px 0px 0px"
+
+};
+
+
 
 export default GoogleApiWrapper({
   apiKey: `${config.API_KEY}`
