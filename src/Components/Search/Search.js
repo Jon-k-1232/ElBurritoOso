@@ -29,7 +29,7 @@ export default class Search extends Component {
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${config.API_KEY2}`,
-        Origin: `${config.FRONT_WEB}`
+        Origin: `${config.FRONT_WEB}`,
       }
     })
       .then(resp => {
@@ -40,20 +40,20 @@ export default class Search extends Component {
       })
 
       .then(data => {
-        this.context.apiAddRestaurants(data.results); // sets google restaurants to context
-        this.context.apiAddReviews(data.reviews); // sets reviews, scores from DB to context
-        this.context.apiUserLat(
-          data.userLatLong.results[0].geometry.location.lat
-        ); // sets latitude of address user typed in
-        this.context.apiUserLng(
-          data.userLatLong.results[0].geometry.location.lng
-        ); // sets longitude of address user typed in
-        this.setState({ apiRestaurants: data }); // set this in order to cause re render for development only.
+
+          this.context.apiAddRestaurants(data.results); // sets google restaurants to context
+          this.context.apiAddReviews(data.reviews); // sets reviews, scores from DB to context
+          this.context.apiUserLat(
+              data.userLatLong.results[0].geometry.location.lat
+          ); // sets latitude of address user typed in
+          this.context.apiUserLng(
+              data.userLatLong.results[0].geometry.location.lng
+          ); // sets longitude of address user typed in
+          this.setState({apiRestaurants: data}); // set this in order to cause re render for development only.
       })
       .catch(error => {
-        console.log(error, "Theres an error.");
+        alert(error);
       });
-
   };
 
 
