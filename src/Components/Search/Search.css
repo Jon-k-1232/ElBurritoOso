@@ -15,6 +15,7 @@
 #pageTitle {
   color: #4caa2b;
   margin: 2em 0em 2em 0em;
+  text-align: center;
 }
 
 
@@ -27,7 +28,7 @@
 
 
 #searchInput {
-  width: 19em;
+  width: 220px;
   border: solid 1px #d8d8d8;
   outline: none;
   background-color: #f9f9f9;
@@ -158,9 +159,14 @@
 @media only screen and (min-width: 550px) {
 
 
-.searchPage{
-  min-height: 90.2vh;
-}
+  .searchPage{
+    min-height: 90.2vh;
+  }
+
+
+  #searchInput {
+    width: 300px;
+  }
 
 
 }
