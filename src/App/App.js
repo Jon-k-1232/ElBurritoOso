@@ -17,27 +17,31 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      restaurants: [],// restaurants pulled in from API
-      reviews: [],// user reviews from api database that match restaurants that rendered.
+      restaurants: [],  // restaurants pulled in from API
+      reviews: [],     // user reviews from api database that match restaurants that rendered.
       newReviews: [],
-      userLat:'',
-      userLng:'',
+      userLat:'',      // users latitude is stored here once api is ran
+      userLng:'',      //  users longitude is stored here once api is ran
       addReviews: () => {},
       tempReview: {},
       setTempReview: (review, cb) => {
         this.setState({ tempReview: review }, cb);
       },
+      // sets restaurant state from api search.js
       apiAddRestaurants: (apiLocations) => {
-        this.setState({ restaurants: apiLocations }) // sets restaurant state from api search.js
+        this.setState({ restaurants: apiLocations })
       },
+      // sets review state from api search.js
       apiAddReviews: (apiReviews) => {
-        this.setState({ reviews: apiReviews }) // sets review state from api search.js
+        this.setState({ reviews: apiReviews })
       },
+      // sets user latitude state from api search.js
       apiUserLat: (lat) => {
-        this.setState({ userLat: lat }) // sets user latitude state from api search.js
+        this.setState({ userLat: lat })
       },
+      // sets user longitude state from api search.js
       apiUserLng: (lng) => {
-        this.setState({ userLng: lng }) // sets user longitude state from api search.js
+        this.setState({ userLng: lng })
       },
     };
   }
@@ -60,7 +64,6 @@ export default class App extends React.Component {
                 component={Confirm}
               />
               <Route exact path="/restaurant/:id" component={Restaurant} />
-
               <Route
                 exact
                 path="/restaurant/new-review/:id"

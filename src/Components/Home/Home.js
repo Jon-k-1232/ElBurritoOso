@@ -14,13 +14,10 @@ export default class Home extends React.Component{
             return (
                 <main className="homeScreen">
 
-                    <div className='welcome'>
+
                         <div className="homeStatement">
                             <h1>The best reviews of <br/> the best burritos.</h1>
                         </div>
-
-                    </div>
-
 
 
                     <div className="action">

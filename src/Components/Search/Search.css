@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5em;
   font-family: "Fredericka the Great", cursive;
   letter-spacing: 2px;
   background: #f3f2f0;
@@ -34,6 +33,7 @@
   background-color: #f9f9f9;
   border-radius: 6px 0px 0px 6px;
 }
+
 
 
 
@@ -127,13 +127,6 @@
 
 
 
-.contactInfo:hover {
-  background: #00634170;
-  border-radius: 80px;
-  width: 30%;
-}
-
-
 
 .contactInfo {
   width: 256px;
@@ -145,6 +138,14 @@
 .contactInfo a {
   text-decoration: none;
   color: #322885e6;
+}
+
+
+
+
+.contactInfo a:hover{
+  cursor: pointer;
+  color: #00634170;
 }
 
 

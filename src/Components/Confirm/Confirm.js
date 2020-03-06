@@ -4,14 +4,8 @@ import AppContext from "../../Context";
 import config from "../../config.js";
 import "./Confirm.css";
 
-
-
 export default class Confirm extends React.Component {
-
   static contextType = AppContext;
-
-
-
 
   addReviewRequest = tempReview => {
     const newReview = {
@@ -20,8 +14,7 @@ export default class Confirm extends React.Component {
       rating: `${tempReview.rating}`
     };
 
-
-// Post request to send data back to backend
+    // Post request to send data back to backend
     fetch(`${config.API_ENDPOINT}`, {
       method: "POST",
       headers: {
@@ -34,18 +27,13 @@ export default class Confirm extends React.Component {
       .then(res => res.json())
       .catch(error => alert(error));
 
-
-    this.context.apiAddRestaurants([])        // sets context restaurants back to 0
-
+    this.context.apiAddRestaurants([]); // sets context restaurants back to 0
   };
-
-
-
 
   render() {
     const { tempReview } = this.context;
 
-    return (
+    return tempReview ? (
       <main className="confirmReviewPage">
         <div className="restaurantInfoContainer">
           <div className="restaurantInfo">
@@ -80,6 +68,8 @@ export default class Confirm extends React.Component {
           </button>
         </div>
       </main>
+    ) : (
+      ""
     );
   }
 }

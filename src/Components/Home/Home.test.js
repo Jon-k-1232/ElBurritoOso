@@ -1,9 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Home from "./Home.js";
+import { BrowserRouter as Router } from "react-router-dom";
 
 it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<Home/>, div);
-    ReactDOM.unmountComponentAtNode(div);
+  const div = document.createElement("div");
+  ReactDOM.render(
+    <Router>
+      <Home />
+    </Router>,
+    div
+  );
+  ReactDOM.unmountComponentAtNode(div);
 });

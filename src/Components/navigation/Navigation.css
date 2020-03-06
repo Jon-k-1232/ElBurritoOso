@@ -1,10 +1,7 @@
 
 header{
-    background-color: #da334afa;
     height: 80px;
-    position: fixed;
     width: 100%;
-    z-index: 99;
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 2px;
 }

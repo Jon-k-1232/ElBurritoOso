@@ -1,9 +1,16 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import leaveReviewPage from "./LeaveReview";
+import LeaveReview from "./LeaveReview";
 
 it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<leaveReviewPage />, div);
-    ReactDOM.unmountComponentAtNode(div);
+  const props = {
+    match: {
+      params: {
+        id: ""
+      }
+    }
+  };
+  const div = document.createElement("div");
+  ReactDOM.render(<LeaveReview {...props} />, div);
+  ReactDOM.unmountComponentAtNode(div);
 });
