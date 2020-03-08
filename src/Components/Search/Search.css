@@ -4,8 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Fredericka the Great", cursive;
-  letter-spacing: 2px;
+  font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
   background: #f3f2f0;
 }
 
@@ -38,9 +37,8 @@
 
 
 #searchInput[type="text"] {
-  font-family: "Fredericka the Great", cursive;
+  font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
   font-weight: bold;
-  letter-spacing: 2px;
   font-size: 14px;
 }
 
@@ -57,9 +55,8 @@
 
 
 #searchButton[type="submit"] {
-  font-family: "Fredericka the Great", cursive;
+  font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
   font-weight: 600;
-  letter-spacing: 2px;
   padding: 10px;
 }
 
@@ -145,7 +142,7 @@
 
 .contactInfo a:hover{
   cursor: pointer;
-  color: #00634170;
+  color: #32288594;
 }
 
 

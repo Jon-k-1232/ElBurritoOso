@@ -1,6 +1,6 @@
 
 .leaveReviewPage{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
     letter-spacing: 2px;
     background: #f3f2f0;
 }
@@ -10,7 +10,6 @@
 .scaleContainer{
     margin: 32px 16px 32px 16px;
     text-align: center;
-    color: #322885e6;
 }
 
 
@@ -60,9 +59,8 @@
 
 
 #ratingInput[type=number], #reviewComment[type=text]{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
     font-weight: bold;
-    letter-spacing: 2px;
     padding: 10px;
     font-size: 18px;
 }
@@ -86,9 +84,9 @@
     width: 130px;
     border: solid 1px #C62232;
     margin: 64px 16px 64px 16px;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
     font-weight: bold;
-    letter-spacing: 2px;
+
 }
 
 

@@ -1,7 +1,6 @@
 
 .homeScreen{
-    font-family: 'Fredericka the Great', cursive;
-    letter-spacing: 2px;
+    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
     background: #f3f2f0;
     display: flex;
     flex-direction: column;
@@ -49,6 +48,24 @@
 .instructSearch, .instructRead, .instructLeave{
     margin: 16px;
     text-align: center;
+}
+
+
+
+.instructSearch:hover{
+    color: rgba(58, 48, 145, 0.65);
+}
+
+
+
+.instructRead:hover{
+    color: rgba(58, 48, 145, 0.65);
+}
+
+
+
+.instructLeave:hover{
+    color: rgba(58, 48, 145, 0.65);
 }
 
 

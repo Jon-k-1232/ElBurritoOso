@@ -11,19 +11,29 @@ export default class Restaurant extends React.Component {
   static contextType = AppContext;
 
   render() {
+
+    // Matches prop id to restaurant ID
     const restaurant = this.context.restaurants.find(
-      res => res.id === this.props.match.params.id
-    ); // Matches prop id to restaurant ID
+        res => res.id === this.props.match.params.id
+    );
+
+    // Locates reviews matching prop ID
     const reviews = this.context.reviews.filter(
       rev => rev.restaurantId === this.props.match.params.id
-    ); // Locates reviews matching prop ID
-    const restaurantCon = this.props.match.params.id; // Turn prop into variable to further pass
+    );
+
+    // Turn prop into variable to further pass
+    const restaurantCon = this.props.match.params.id;
+
+    // Stringify restaurant latitude for static marker
     const lat = restaurant
       ? parseFloat(restaurant.geometry.location.lat)
-      : 33.15; // Stringify restaurant latitude for static marker
+      : 33.15;
+
+    // Stringify restaurant longitude for static marker
     const lng = restaurant
       ? parseFloat(restaurant.geometry.location.lng)
-      : -71.0; // Stringify restaurant longitude for static marker
+      : -71.0;
 
     // this will iterate through the matching reviews and output the average rating of all reviews
     const rateAvg = sync => {
@@ -47,15 +57,18 @@ export default class Restaurant extends React.Component {
       );
     };
 
+
     return restaurant ? (
       <main className="restaurantPage">
-        <StaticGoogleMap
-          size="800x800"
-          className="imgFluid"
-          apiKey={`${config.API_KEY}`}
-        >
-          <Marker label="B" location={{ lat: lat, lng: lng }} />
-        </StaticGoogleMap>
+        <div className='staticMapContainer'>
+          <StaticGoogleMap
+            size="800x800"
+            className="imgFluid"
+            apiKey={`${config.API_KEY}`}
+          >
+            <Marker label="B" location={{ lat: lat, lng: lng }} />
+          </StaticGoogleMap>
+        </div>
 
         <div className="contentContainer">
           <div className="restaurantInfoContainer">
