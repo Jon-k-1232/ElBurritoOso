@@ -113,7 +113,6 @@
 
 
 .hitItemContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,13 +157,14 @@
 
 
   .searchPage{
-    min-height: 90.2vh;
+    min-height: 80vh;
   }
 
 
   #searchInput {
     width: 300px;
   }
+
 
 
 }

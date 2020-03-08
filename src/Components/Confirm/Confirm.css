@@ -1,9 +1,7 @@
 
 .confirmReviewPage{
     font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
-
     background: #f3f2f0;
-    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,4 +26,17 @@
 
 .confirmRating p, .confirmReview p{
     font-weight: bold;
+}
+
+
+
+
+
+@media only screen and (min-width: 550px) {
+
+
+.confirmReviewPage{
+    min-height: 80vh;
+}
+
 }

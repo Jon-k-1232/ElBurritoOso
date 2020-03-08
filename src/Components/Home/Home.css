@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 84vh;
+    min-height: 75vh;
 }
 
 
@@ -84,7 +84,7 @@ a{
 @media only screen and (min-width: 550px) {
 
     .homeScreen {
-        min-height: 87vh;
+        min-height: 80vh;
     }
 
 
@@ -93,18 +93,7 @@ a{
 
 
 
-/******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
 
-
-
-@media only screen and (min-width: 900px) {
-
-.homeScreen{
-    min-height: 90.2vh;
-}
-
-
-}
 
 
 
