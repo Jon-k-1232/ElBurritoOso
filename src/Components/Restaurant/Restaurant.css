@@ -1,162 +1,112 @@
-
-.restaurantPage{
-    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
-    letter-spacing: 2px;
-    background: #f3f2f0;
+.restaurantPage {
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
+  letter-spacing: 2px;
+  background: #f3f2f0;
 }
 
-
-
-.contentContainer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-
-
-.staticMapContainer{
-    width: 100%;
-    text-align: center;
+.staticMapContainer {
+  width: 100%;
+  text-align: center;
 }
 
-
-
-#nextReview a{
-    text-decoration: none;
-    color: white;
+#nextReview a {
+  text-decoration: none;
+  color: white;
 }
 
-
-
-.restaurantInfoContainer{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
+.restaurantInfoContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
 }
 
-
-
-.restaurantInfo{
-    margin: 20px;
+.restaurantInfo {
+  margin: 20px;
 }
 
-
-
-.reviewContainer div p{
-    font-weight: bold;
+.reviewContainer div p {
+  font-weight: bold;
 }
 
-
-
-.resButtons{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
+.resButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
-
-
-.imgFluid{
-    width: 100%;
-    margin-top: 11px;
+.imgFluid {
+  width: 100%;
+  margin-top: 11px;
 }
 
-
-
-#leaveRvwBtn{
-    background: #ea3547;
-    border: #ea3547;
-    color: #fff;
-    font-size: 15px;
-    width: 130px;
-    height: 40px;
-    margin: 2em 0em 3em 0em;
-    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
-    font-weight: bold;
+#leaveRvwBtn {
+  background: #ea3547;
+  border: #ea3547;
+  color: #fff;
+  font-size: 15px;
+  width: 130px;
+  height: 40px;
+  margin: 2em 0em 3em 0em;
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
+  font-weight: bold;
 }
 
-
-
-#leaveRvwBtn a{
-    text-decoration: none;
-    color: #fff;
+#leaveRvwBtn a {
+  text-decoration: none;
+  color: #fff;
 }
 
-
-
-#leaveRvwBtn:hover{
-    cursor: pointer;
-    background: #da334ac9
+#leaveRvwBtn:hover {
+  cursor: pointer;
+  background: #da334ac9;
 }
-
-
-
 
 /******************************\\\\\\\\\\  TABLET  /////////******************************/
 
-
-
 @media only screen and (min-width: 550px) {
+  .imgFluid {
+    height: 600px;
+    width: fit-content;
+  }
 
-    .imgFluid {
-        height: 600px;
-        width: fit-content;
-    }
-
-
-    .restaurantPage{
-        min-height: 84vh;
-    }
-
+  .restaurantPage {
+    min-height: 84vh;
+  }
 }
-
-
-
 
 /******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
 
-
-
 @media only screen and (min-width: 950px) {
+  .restaurantPage {
+    min-height: 84vh;
+  }
 
+  .imgFluid {
+    height: 500px;
+    width: 500px;
+  }
 
-    .restaurantPage{
-        min-height: 84vh;
-    }
+  .restaurantPage {
+    display: inline-flex;
+  }
 
+  .contentContainer {
+    width: 48%;
+  }
 
-
-    .imgFluid {
-        height: 500px;
-        width: 500px;
-    }
-
-
-
-    .restaurantPage{
-        display: inline-flex;
-    }
-
-
-
-    .contentContainer{
-        width: 48%;
-    }
-
-
-
-    .staticMapContainer{
-        width: 52%;
-    }
-
-
+  .staticMapContainer {
+    width: 52%;
+  }
 }
-
-
-
-

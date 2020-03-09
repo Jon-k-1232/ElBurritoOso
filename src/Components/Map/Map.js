@@ -4,14 +4,9 @@ import AppContext from "../../Context.js";
 import config from "../../config.js";
 import burritoIcon from "../images/burritoIcon.png";
 import pin from "../images/pin.png";
-import '../Map/Map.css'
-
-
-
-
+import "../Map/Map.css";
 
 class Maps extends React.Component {
-
   static contextType = AppContext;
 
   constructor(props) {
@@ -20,12 +15,11 @@ class Maps extends React.Component {
     this.state = {
       selectedRestaurant: "",
       activeMarker: {},
-      showingInfoWindow: false,
+      showingInfoWindow: false
     };
   }
 
-
-// setting state to open marker once clicked
+  // setting state to open marker once clicked
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedRestaurant: props,
@@ -34,8 +28,6 @@ class Maps extends React.Component {
     });
   };
 
-
-
   render() {
     if (!this.props.google) {
       return <div>Loading...</div>;
@@ -43,23 +35,20 @@ class Maps extends React.Component {
 
     //  pulls in users search location to set a pin and zero map center
     const userLat = this.context.userLat;
-    const userLng= this.context.userLng;
-
-
+    const userLng = this.context.userLng;
 
     return (
       <div className="mapContainer">
-
         <Map
           google={this.props.google}
           zoom={12}
           style={mapStyles}
-          initialCenter={{ // center the map
+          initialCenter={{
+            // center the map
             lat: userLat,
             lng: userLng
           }}
         >
-
           {this.context.restaurants.map(hitLocation => (
             <Marker
               key={hitLocation.id}
@@ -78,8 +67,6 @@ class Maps extends React.Component {
             />
           ))}
 
-
-
           <InfoWindow
             visible={this.state.showingInfoWindow}
             marker={this.state.activeMarker}
@@ -89,7 +76,6 @@ class Maps extends React.Component {
               <p>{this.state.selectedRestaurant.vicinity}</p>
             </div>
           </InfoWindow>
-
 
           <Marker
             position={{
@@ -101,24 +87,18 @@ class Maps extends React.Component {
               scaledSize: new window.google.maps.Size(35, 35)
             }}
           />
-
-
         </Map>
       </div>
     );
   }
 }
 
-
 const mapStyles = {
   position: "relative",
   width: "100%",
   height: "29em",
   margin: "32px 0px 0px 0px"
-
 };
-
-
 
 export default GoogleApiWrapper({
   apiKey: `${config.API_KEY}`

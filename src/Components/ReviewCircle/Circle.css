@@ -1,16 +1,13 @@
-
-.reviewCircle{
-    border: 2px solid #C62232;
-    color: #C62232;
-    border-radius: 50%;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    width: 4em;
-    height: 4em;
-    letter-spacing: 1px;
+.reviewCircle {
+  border: 2px solid #c62232;
+  color: #c62232;
+  border-radius: 50%;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  width: 4em;
+  height: 4em;
+  letter-spacing: 1px;
 }
-
-

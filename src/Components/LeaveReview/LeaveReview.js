@@ -47,7 +47,6 @@ export default class LeaveReview extends React.Component {
   };
 
   render() {
-
     const restaurant = this.context.location;
 
     return restaurant ? (

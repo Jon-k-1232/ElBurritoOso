@@ -13,11 +13,9 @@ export default class Search extends Component {
     super(props);
     this.state = {
       address: [],
-      loading: true,
+      loading: true
     };
   }
-
-
 
   // Call to backend to get restaurants and user reviews
   fetchRestaurants = e => {
@@ -29,7 +27,7 @@ export default class Search extends Component {
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${config.API_KEY2}`,
-        Origin: `${config.FRONT_WEB}`,
+        Origin: `${config.FRONT_WEB}`
       }
     })
       .then(resp => {
@@ -39,22 +37,20 @@ export default class Search extends Component {
         return resp.json();
       })
       .then(data => {
-          this.context.apiAddRestaurants(data.results); // sets google restaurants to context
-          this.context.apiAddReviews(data.reviews); // sets reviews, scores from DB to context
-          this.context.apiUserLat(
-              data.userLatLong.results[0].geometry.location.lat
-          ); // sets latitude of address user typed in
-          this.context.apiUserLng(
-              data.userLatLong.results[0].geometry.location.lng
-          ); // sets longitude of address user typed in
-          this.setState({loading: false}); // set this in order to cause re render for development only.
+        this.context.apiAddRestaurants(data.results); // sets google restaurants to context
+        this.context.apiAddReviews(data.reviews); // sets reviews, scores from DB to context
+        this.context.apiUserLat(
+          data.userLatLong.results[0].geometry.location.lat
+        ); // sets latitude of address user typed in
+        this.context.apiUserLng(
+          data.userLatLong.results[0].geometry.location.lng
+        ); // sets longitude of address user typed in
+        this.setState({ loading: false }); // set this in order to cause re render for development only.
       })
       .catch(error => {
         alert(error);
       });
   };
-
-
 
   // Setting state to cause a re render
   addressUpdate = userAddress => {
@@ -63,9 +59,6 @@ export default class Search extends Component {
     });
   };
 
-
-
-
   render() {
     let arr = this.context.restaurants;
     let searchHits = [];
@@ -73,7 +66,6 @@ export default class Search extends Component {
 
     // this will make a search result list for each hit returned from search.
     for (let i = 0; i < arr.length; i++) {
-
       // sync equals place_id
       const rateFinder = syncId => {
         let sum = 0;
@@ -82,10 +74,8 @@ export default class Search extends Component {
 
         // finds the length of data base returned reviews
         for (let i = 0; i < reviewSearch.length; i++) {
-
           // compares the google place id to Database review place id
           if (syncId === reviewSearch[i].restaurantId) {
-
             reviewRate.push(reviewSearch[i].rating);
 
             // adds the integers together
@@ -128,19 +118,16 @@ export default class Search extends Component {
       );
     }
 
-
-
     // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
     const displayMap = () => {
       if (arr.length >= 1) {
         return (
           <div className="mapBox">
-            <Maps/>
+            <Maps />
           </div>
         );
       }
     };
-
 
     return (
       <main className="searchPage">

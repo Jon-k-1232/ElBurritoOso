@@ -11,48 +11,43 @@ import LeaveReview from "../Components/LeaveReview/LeaveReview.js";
 import "./App.css";
 import AppContext from "../Context";
 
-
-
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      restaurants: [],  // restaurants pulled in from API
-      reviews: [],     // user reviews from api database that match restaurants that rendered.
+      restaurants: [], // restaurants pulled in from API
+      reviews: [], // user reviews from api database that match restaurants that rendered.
       newReviews: [],
-      userLat:'',      // users latitude is stored here once api is ran
-      userLng:'',      //  users longitude is stored here once api is ran
+      userLat: "", // users latitude is stored here once api is ran
+      userLng: "", //  users longitude is stored here once api is ran
       tempReview: {},
-      location:'',
+      location: "",
       addReviews: () => {},
       setTempReview: (review, cb) => {
         this.setState({ tempReview: review }, cb);
       },
       // sets restaurant state from api search.js
-      apiAddRestaurants: (apiLocations) => {
-        this.setState({ restaurants: apiLocations })
+      apiAddRestaurants: apiLocations => {
+        this.setState({ restaurants: apiLocations });
       },
       // sets review state from api search.js
-      apiAddReviews: (apiReviews) => {
-        this.setState({ reviews: apiReviews })
+      apiAddReviews: apiReviews => {
+        this.setState({ reviews: apiReviews });
       },
       // sets user latitude state from api search.js
-      apiUserLat: (lat) => {
-        this.setState({ userLat: lat })
+      apiUserLat: lat => {
+        this.setState({ userLat: lat });
       },
       // sets user longitude state from api search.js
-      apiUserLng: (lng) => {
-        this.setState({ userLng: lng })
+      apiUserLng: lng => {
+        this.setState({ userLng: lng });
       },
       //sets location state for restaurant page, needed for route
-      apiLocationShare: (locationData) => {
-        this.setState({ location: locationData })
-      },
+      apiLocationShare: locationData => {
+        this.setState({ location: locationData });
+      }
     };
   }
-
-
-
 
   render() {
     return (

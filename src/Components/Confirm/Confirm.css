@@ -1,41 +1,36 @@
-
-.confirmReviewPage{
-    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
-    background: #f3f2f0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.confirmReviewPage {
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
+  background: #f3f2f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-
-.confirmRating, .confirmReview{
-    margin: 2em 2em 2em 2em;
+.confirmRating,
+.confirmReview {
+  margin: 2em 2em 2em 2em;
 }
 
-
-.confirmRating{
-    margin-bottom: 2em;
+.confirmRating {
+  margin-bottom: 2em;
 }
 
-.confirmButtons{
-    justify-content: center;
-    display: inline-flex;
-    width: 100%;
+.confirmButtons {
+  justify-content: center;
+  display: inline-flex;
+  width: 100%;
 }
 
-.confirmRating p, .confirmReview p{
-    font-weight: bold;
+.confirmRating p,
+.confirmReview p {
+  font-weight: bold;
 }
 
-
-
-
+/******************************\\\\\\\\\\  TABLET  /////////******************************/
 
 @media only screen and (min-width: 550px) {
-
-
-.confirmReviewPage{
+  .confirmReviewPage {
     min-height: 80vh;
-}
-
+  }
 }

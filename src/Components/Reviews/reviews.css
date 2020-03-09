@@ -1,0 +1,29 @@
+.reviewsCircle {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.reviewContainer {
+  margin: 0em 16px 0em 16px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+@media only screen and (min-width: 550px) {
+  .reviewText {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .reviewText p {
+    width: 600px;
+  }
+}
+
+/******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
+
+@media only screen and (min-width: 900px) {
+  .reviewText p {
+    width: 850px;
+  }
+}

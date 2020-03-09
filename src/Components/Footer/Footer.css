@@ -1,43 +1,35 @@
-
-footer{
-    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
+footer {
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
 }
 
-
-
-#twitter, #insta, #fb{
-    margin: 32px 16px 16px 8px;
+#twitter,
+#insta,
+#fb {
+  margin: 32px 16px 16px 8px;
 }
 
-
-
-#twitter:hover{
-     cursor: pointer;
-     font-size: 10px;
- }
-
-
-
-#insta:hover{
-    cursor: pointer;
-    font-size: 10px;
+#twitter:hover {
+  cursor: pointer;
+  font-size: 10px;
 }
 
-
-
-#fb:hover{
-    cursor: pointer;
-    font-size: 10px;
+#insta:hover {
+  cursor: pointer;
+  font-size: 10px;
 }
 
-
-
-footer p{
-    margin: 8px;
-    font-weight: bolder;
+#fb:hover {
+  cursor: pointer;
+  font-size: 10px;
 }
 
-.social-icon{
-    width: 43px !important;
-    height: 43px !important;
+footer p {
+  margin: 8px;
+  font-weight: bolder;
+}
+
+.social-icon {
+  width: 43px !important;
+  height: 43px !important;
 }

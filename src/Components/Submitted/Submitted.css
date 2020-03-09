@@ -1,30 +1,24 @@
-
-.submittedPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    min-height: 75vh;
-    font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
-    background: #f3f2f0;
-    width: 100%
+.submittedPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  min-height: 75vh;
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
+  background: #f3f2f0;
+  width: 100%;
 }
 
-
-
-#submitted{
-    margin: 0px 0px 48px 0px;
+#submitted {
+  margin: 0px 0px 48px 0px;
 }
 
-
-
+/******************************\\\\\\\\\\  TABLET  /////////******************************/
 
 @media only screen and (min-width: 550px) {
-
-
-    .submittedPage{
-        min-height: 80vh;
-    }
-
+  .submittedPage {
+    min-height: 80vh;
+  }
 }

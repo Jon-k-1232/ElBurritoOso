@@ -1,14 +1,12 @@
-
 .searchPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
   background: #f3f2f0;
 }
-
-
 
 #pageTitle {
   color: #4caa2b;
@@ -16,14 +14,10 @@
   text-align: center;
 }
 
-
-
 .searchForm {
   display: flex;
   width: 100%;
 }
-
-
 
 #searchInput {
   width: 220px;
@@ -33,16 +27,12 @@
   border-radius: 6px 0px 0px 6px;
 }
 
-
-
-
 #searchInput[type="text"] {
-  font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
   font-weight: bold;
   font-size: 14px;
 }
-
-
 
 #searchButton {
   background: #ea3547;
@@ -52,29 +42,22 @@
   border-radius: 0px 6px 6px 0px;
 }
 
-
-
 #searchButton[type="submit"] {
-  font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, BlinkMacSystemFont, Avenir Next,
+    Avenir, -apple-system, sans-serif;
   font-weight: 600;
   padding: 10px;
 }
-
-
 
 #searchButton:hover {
   cursor: pointer;
   background: red;
 }
 
-
-
 .gradingScale {
   margin: 2em 1em 0em 1em;
   text-align: center;
 }
-
-
 
 .gradingScale p {
   width: 7em;
@@ -85,20 +68,14 @@
   font-weight: 600;
 }
 
-
-
 .gradingScale span {
   color: #e0485d;
 }
-
-
 
 .mapBox {
   height: 500px;
   width: 100%;
 }
-
-
 
 .hitsContainer {
   display: flex;
@@ -110,8 +87,6 @@
   z-index: 2;
 }
 
-
-
 .hitItemContainer {
   display: flex;
   flex-direction: column;
@@ -121,66 +96,37 @@
   padding-bottom: 35px;
 }
 
-
-
-
 .contactInfo {
   width: 256px;
   z-index: 2;
 }
-
-
 
 .contactInfo a {
   text-decoration: none;
   color: #245f8a;
 }
 
-
-
-
-.contactInfo a:hover{
+.contactInfo a:hover {
   cursor: pointer;
   color: #32288594;
 }
 
-
-
-
-
-
 /******************************\\\\\\\\\\  TABLET  /////////******************************/
 
-
-
 @media only screen and (min-width: 550px) {
-
-
-  .searchPage{
+  .searchPage {
     min-height: 80vh;
   }
-
 
   #searchInput {
     width: 300px;
   }
-
-
-
 }
-
-
-
 
 /******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
 
-
-
 @media only screen and (min-width: 850px) {
-
-  .searchPage{
+  .searchPage {
     min-height: 84vh;
   }
-
-
 }
