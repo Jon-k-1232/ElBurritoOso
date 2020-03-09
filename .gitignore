@@ -19,7 +19,6 @@
 .env.test.local
 .env.production.local
 /.now
-now.json
 
 
 npm-debug.log*
