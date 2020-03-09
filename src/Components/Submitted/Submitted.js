@@ -7,6 +7,7 @@ import "./Submitted.css"
 
 export default function Submitted(){
 
+    //end page, select home to got home.
     return(
         <main className="submittedPage">
 

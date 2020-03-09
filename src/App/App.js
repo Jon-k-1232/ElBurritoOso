@@ -22,8 +22,9 @@ export default class App extends React.Component {
       newReviews: [],
       userLat:'',      // users latitude is stored here once api is ran
       userLng:'',      //  users longitude is stored here once api is ran
-      addReviews: () => {},
       tempReview: {},
+      location:'',
+      addReviews: () => {},
       setTempReview: (review, cb) => {
         this.setState({ tempReview: review }, cb);
       },
@@ -42,6 +43,10 @@ export default class App extends React.Component {
       // sets user longitude state from api search.js
       apiUserLng: (lng) => {
         this.setState({ userLng: lng })
+      },
+      //sets location state for restaurant page, needed for route
+      apiLocationShare: (locationData) => {
+        this.setState({ location: locationData })
       },
     };
   }

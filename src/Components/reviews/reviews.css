@@ -12,3 +12,33 @@
 }
 
 
+
+
+
+@media only screen and (min-width: 550px) {
+
+
+    .reviewText{
+        width:100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+    .reviewText p{
+        width:600px;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 900px) {
+
+    .reviewText p{
+        width:850px;
+    }
+
+}
+

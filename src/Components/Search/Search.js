@@ -13,7 +13,7 @@ export default class Search extends Component {
     super(props);
     this.state = {
       address: [],
-      apiRestaurants: []
+      loading: true,
     };
   }
 
@@ -38,9 +38,7 @@ export default class Search extends Component {
         }
         return resp.json();
       })
-
       .then(data => {
-
           this.context.apiAddRestaurants(data.results); // sets google restaurants to context
           this.context.apiAddReviews(data.reviews); // sets reviews, scores from DB to context
           this.context.apiUserLat(
@@ -49,7 +47,7 @@ export default class Search extends Component {
           this.context.apiUserLng(
               data.userLatLong.results[0].geometry.location.lng
           ); // sets longitude of address user typed in
-          this.setState({apiRestaurants: data}); // set this in order to cause re render for development only.
+          this.setState({loading: false}); // set this in order to cause re render for development only.
       })
       .catch(error => {
         alert(error);
@@ -58,7 +56,7 @@ export default class Search extends Component {
 
 
 
-
+  // Setting state to cause a re render
   addressUpdate = userAddress => {
     this.setState({
       address: userAddress
@@ -75,27 +73,34 @@ export default class Search extends Component {
 
     // this will make a search result list for each hit returned from search.
     for (let i = 0; i < arr.length; i++) {
+
+      // sync equals place_id
       const rateFinder = syncId => {
-        // sync equals restaurant ID string
         let sum = 0;
         let avg = 0;
         let reviewRate = [];
+
+        // finds the length of data base returned reviews
         for (let i = 0; i < reviewSearch.length; i++) {
-          // finds the length of data base returned reviews
+
+          // compares the google place id to Database review place id
           if (syncId === reviewSearch[i].restaurantId) {
-            // compares the google restaurant ID to Database review restaurant ID
-            reviewRate.push(reviewSearch[i].rating); // if the restaurant id matches db restaurant ID then pushes the integer rating onto array
-            sum += reviewSearch[i].rating; // adds the integers together
+
+            reviewRate.push(reviewSearch[i].rating);
+
+            // adds the integers together
+            sum += reviewSearch[i].rating;
           }
         }
-        avg = sum / reviewRate.length; // divides sum by total
+        // divides sum by total
+        avg = sum / reviewRate.length;
         return reviewRate.length ? (
           <div className="circleContainer">
             <Circle rating={avg} />
           </div>
         ) : (
           <div className="circleContainer">
-            <h2>Be the first to write a review</h2>
+            <h3>Be the first to write a review</h3>
           </div>
         );
       };
@@ -105,19 +110,19 @@ export default class Search extends Component {
         <div className="hitItemContainer" key={i}>
           <div className="contactInfo">
             <h2>
-              <Link to={`/restaurant/${this.context.restaurants[i].id}`}>
+              <Link to={`/restaurant/${this.context.restaurants[i].place_id}`}>
                 {this.context.restaurants[i].name}
               </Link>
             </h2>
             <h4>
-              <Link to={`/restaurant/${this.context.restaurants[i].id}`}>
+              <Link to={`/restaurant/${this.context.restaurants[i].place_id}`}>
                 {this.context.restaurants[i].vicinity}
               </Link>
             </h4>
           </div>
 
           <div className="circleContainer">
-            {rateFinder(this.context.restaurants[i].id)}
+            {rateFinder(this.context.restaurants[i].place_id)}
           </div>
         </div>
       );
@@ -135,10 +140,6 @@ export default class Search extends Component {
         );
       }
     };
-
-
-
-
 
 
     return (

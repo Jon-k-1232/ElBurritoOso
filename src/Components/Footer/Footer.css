@@ -36,3 +36,8 @@ footer p{
     margin: 8px;
     font-weight: bolder;
 }
+
+.social-icon{
+    width: 43px !important;
+    height: 43px !important;
+}

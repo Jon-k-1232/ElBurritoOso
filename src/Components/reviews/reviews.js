@@ -7,9 +7,10 @@ import Circle from "../ReviewCircle/Circle.js";
 
 export default function Reviews(props) {
 
+    // generates user review text and the review circle. This displays on the selected restaurant page
     return (
         <div className="reviewContainer">
-            <div>
+            <div className='reviewText'>
                 <p>{props.review}</p>
             </div>
 

@@ -27,14 +27,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #322885e6;
+    color: #245f8a;
 }
 
 
 
 .instructions{
     display: inline-flex;
-    color: #322885e6;
+    color: #245f8a;
 }
 
 
@@ -85,6 +85,20 @@ a{
 
     .homeScreen {
         min-height: 80vh;
+    }
+
+
+}
+
+
+
+/******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
+
+
+@media only screen and (min-width: 850px) {
+
+    .homeScreen {
+        min-height: 84vh;
     }
 
 

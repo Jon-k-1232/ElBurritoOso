@@ -10,17 +10,53 @@ import { StaticGoogleMap, Marker } from "react-static-google-map";
 export default class Restaurant extends React.Component {
   static contextType = AppContext;
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      restaurant:'',
+      reviews:'',
+    };
+  }
+
+
+/*
+Needed for a route to be shared for a specific restaurant. this.props.match.params.id is the restaurant place id and
+gets passed to the backend to run a place detail query against google, and app DB. This returns the restaurants
+demographics, as well as any reviews in the apps db.
+ */
+componentDidMount() {
+  fetch(`${config.API_ENDPOINT_REST}/${this.props.match.params.id}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Bearer ${config.API_KEY2}`,
+      Origin: `${config.FRONT_WEB}`,
+    }
+  })
+      .then(resp => {
+        if (!resp.ok) {
+          throw new Error(resp.status);
+        }
+        return resp.json();
+      })
+      .then(data => {
+        this.setState({reviews:data.reviews});
+        this.setState({restaurant:data.results});
+        this.context.apiLocationShare(data.results);
+      })
+      .catch(error => {
+        alert(error);
+      });
+}
+
+
   render() {
 
     // Matches prop id to restaurant ID
-    const restaurant = this.context.restaurants.find(
-        res => res.id === this.props.match.params.id
-    );
+    const restaurant = this.state.restaurant;
 
     // Locates reviews matching prop ID
-    const reviews = this.context.reviews.filter(
-      rev => rev.restaurantId === this.props.match.params.id
-    );
+    const reviews = this.state.reviews;
 
     // Turn prop into variable to further pass
     const restaurantCon = this.props.match.params.id;
@@ -57,14 +93,29 @@ export default class Restaurant extends React.Component {
       );
     };
 
+    /*
+     reviewDisplay runs after component will mount. this reads the updated state for reviews. If there is a review, or multiple
+     reviews, this will iterate through the array, and print the review details with score.
+     */
+    const reviewDisplay =(stateReview)=>{
+      let arr = stateReview;
+      let reviewHits = [];
+     for (let i = 0; i < arr.length; i++) {
+        reviewHits.push(
+          <Reviews key={i} {...arr[i]}/>
+        )
+     }
+      return reviewHits
+    };
 
-    return restaurant ? (
+    return restaurant ?(
       <main className="restaurantPage">
+
         <div className='staticMapContainer'>
           <StaticGoogleMap
-            size="800x800"
-            className="imgFluid"
-            apiKey={`${config.API_KEY}`}
+              size="800x800"
+              className="imgFluid"
+              apiKey={`${config.API_KEY}`}
           >
             <Marker label="B" location={{ lat: lat, lng: lng }} />
           </StaticGoogleMap>
@@ -73,26 +124,30 @@ export default class Restaurant extends React.Component {
         <div className="contentContainer">
           <div className="restaurantInfoContainer">
             <div className="restaurantInfo">
-              <h2>{restaurant.name}</h2>
-              <h4>{restaurant.vicinity}</h4>
+                    <h2>{restaurant.name}</h2>
+                    <h4>{restaurant.formatted_address}</h4>
             </div>
             <div className="resButtons">
-              <button id="leaveRvwBtn">
-                <Link to={`/restaurant/new-review/${restaurantCon}`}>
-                  Leave Review
-                </Link>
-              </button>
-              {rateAvg({ ...reviews })}
+                {rateAvg({ ...reviews })}
+                <button id="leaveRvwBtn">
+                    <Link to={`/restaurant/new-review/${restaurantCon}`}>
+                    Leave Review
+                    </Link>
+                </button>
             </div>
           </div>
-
-          {reviews.map((review, i) => (
-            <Reviews key={i} {...review} />
-          ))}
+          {reviewDisplay(this.state.reviews)}
         </div>
       </main>
     ) : (
-      ""
+        ""
     );
   }
 }
+
+
+
+
+
+
+

@@ -68,8 +68,8 @@
 
 #reviewComment{
     border: solid 1px #D8D8D8;
-    outline: none;
     background-color: #f9f9f9;
+    outline: none;
     height: 272px;
     width: 80%;
 }
@@ -77,15 +77,14 @@
 
 
 #reviewSubButton{
-    background: #C62232;
+    background: #ea3547;
+    border: solid 1px #ea3547;
     color: #fff;
-    font-size: 24px;
-    width: 130px;
-    border: solid 1px #C62232;
+    font-size: 20px;
+    width: 120px;
     margin: 64px 16px 64px 16px;
     font-family: 'Helvetica Neue',Helvetica,BlinkMacSystemFont,Avenir Next,Avenir,-apple-system,sans-serif;
     font-weight: bold;
-
 }
 
 
@@ -93,6 +92,13 @@
 #reviewSubButton a{
     text-decoration: none;
     color: #fff;
+}
+
+
+
+#reviewSubButton:hover{
+    cursor: pointer;
+    background: #da334ac9
 }
 
 

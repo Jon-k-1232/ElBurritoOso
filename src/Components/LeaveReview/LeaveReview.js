@@ -47,16 +47,15 @@ export default class LeaveReview extends React.Component {
   };
 
   render() {
-    const restaurant = this.context.restaurants.find(
-      res => res.id === this.props.match.params.id
-    );
+
+    const restaurant = this.context.location;
 
     return restaurant ? (
       <main className="leaveReviewPage">
         <div className="restaurantInfoContainer">
           <div className="restaurantInfo">
             <h2>{restaurant.name}</h2>
-            <h4>{restaurant.vicinity}</h4>
+            <h4>{restaurant.formatted_address}</h4>
           </div>
         </div>
 
@@ -99,7 +98,7 @@ export default class LeaveReview extends React.Component {
             type="text"
             wrap="soft"
             placeholder="Write a review..."
-            maxlength="500"
+            maxLength="500"
             onChange={e => this.updateReview(e.target.value, restaurant)}
             required
           />

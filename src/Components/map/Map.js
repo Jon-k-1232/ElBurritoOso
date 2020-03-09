@@ -25,7 +25,7 @@ class Maps extends React.Component {
   }
 
 
-
+// setting state to open marker once clicked
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedRestaurant: props,
@@ -41,7 +41,7 @@ class Maps extends React.Component {
       return <div>Loading...</div>;
     }
 
-
+    //  pulls in users search location to set a pin and zero map center
     const userLat = this.context.userLat;
     const userLng= this.context.userLng;
 
@@ -54,12 +54,13 @@ class Maps extends React.Component {
           google={this.props.google}
           zoom={12}
           style={mapStyles}
-          initialCenter={{
+          initialCenter={{ // center the map
             lat: userLat,
             lng: userLng
           }}
         >
-          {this.context.restaurants.map(hitLocation => (    // This marker iterates through locations found and creates a marker
+
+          {this.context.restaurants.map(hitLocation => (
             <Marker
               key={hitLocation.id}
               position={{
@@ -90,9 +91,8 @@ class Maps extends React.Component {
           </InfoWindow>
 
 
-
           <Marker
-            position={{       // This marker drops a pin on location user input into search
+            position={{
               lat: userLat,
               lng: userLng
             }}

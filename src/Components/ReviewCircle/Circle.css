@@ -1,8 +1,8 @@
 
 .reviewCircle{
+    border: 2px solid #C62232;
+    color: #C62232;
     border-radius: 50%;
-    background: #81c59de6;
-    box-shadow: 1px 2px 4px 2px #66967af0;
     text-decoration: none;
     display: inline-flex;
     align-items: center;

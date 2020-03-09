@@ -27,7 +27,8 @@ export default class Confirm extends React.Component {
       .then(res => res.json())
       .catch(error => alert(error));
 
-    this.context.apiAddRestaurants([]); // sets context restaurants back to 0
+    // sets context restaurants back to 0
+    this.context.apiAddRestaurants([]);
   };
 
   render() {
@@ -51,6 +52,7 @@ export default class Confirm extends React.Component {
           <h2>Review:</h2>
           <p>{tempReview.review}</p>
         </div>
+
 
         <div className="confirmButtons">
           <button type="submit" id="reviewSubButton">
