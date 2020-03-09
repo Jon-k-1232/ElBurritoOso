@@ -130,6 +130,7 @@
     }
 
 
+
     .imgFluid {
         height: 500px;
         width: 500px;
@@ -142,8 +143,15 @@
     }
 
 
+
     .contentContainer{
         width: 48%;
+    }
+
+
+
+    .staticMapContainer{
+        width: 52%;
     }
 
 
