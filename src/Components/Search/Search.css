@@ -111,6 +111,14 @@
   color: #32288594;
 }
 
+.notFound{
+  width: 100%;
+  min-height: 79vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /******************************\\\\\\\\\\  TABLET  /////////******************************/
 
 @media only screen and (min-width: 550px) {
@@ -121,12 +129,20 @@
   #searchInput {
     width: 300px;
   }
+
+  .notFound{
+    min-height: 80vh;
+  }
 }
 
 /******************************\\\\\\\\\\  LARGE SCREEN  /////////******************************/
 
 @media only screen and (min-width: 850px) {
   .searchPage {
+    min-height: 84vh;
+  }
+
+  .notFound{
     min-height: 84vh;
   }
 }

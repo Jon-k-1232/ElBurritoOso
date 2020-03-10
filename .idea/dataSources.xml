@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="El Burrito Oso Live DB" uuid="d99ca06c-f60f-41a0-8592-fe06f5154295">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-50-17-178-87.compute-1.amazonaws.com:5432/d7rqpvkthrls7n</jdbc-url>
+    </data-source>
+  </component>
+</project>

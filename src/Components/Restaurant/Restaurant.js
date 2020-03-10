@@ -41,6 +41,8 @@ export default class Restaurant extends React.Component {
       .then(data => {
         this.setState({ reviews: data.reviews });
         this.setState({ restaurant: data.results });
+
+        //needed in order to leave a new review if route is saved
         this.context.apiLocationShare(data.results);
       })
       .catch(error => {
@@ -134,7 +136,9 @@ export default class Restaurant extends React.Component {
         </div>
       </main>
     ) : (
-      ""
+        <div className='notFound'>
+          <h2>Loading...</h2>
+        </div>
     );
   }
 }

@@ -71,7 +71,9 @@ export default class Confirm extends React.Component {
         </div>
       </main>
     ) : (
-      ""
+        <div className='notFound'>
+          <h2>Please start a new search to find only the best burritos.</h2>
+        </div>
     );
   }
 }

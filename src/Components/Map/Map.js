@@ -15,7 +15,7 @@ class Maps extends React.Component {
     this.state = {
       selectedRestaurant: "",
       activeMarker: {},
-      showingInfoWindow: false
+      showingInfoWindow: false,
     };
   }
 

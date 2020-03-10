@@ -54,7 +54,7 @@ export default class LeaveReview extends React.Component {
         <div className="restaurantInfoContainer">
           <div className="restaurantInfo">
             <h2>{restaurant.name}</h2>
-            <h4>{restaurant.formatted_address}</h4>
+            <h4>{restaurant.vicinity}</h4>
           </div>
         </div>
 
@@ -107,7 +107,9 @@ export default class LeaveReview extends React.Component {
         </form>
       </main>
     ) : (
-      ""
+      <div className='notFound'>
+        <h2>Please start a new search to find only the best burritos.</h2>
+      </div>
     );
   }
 }

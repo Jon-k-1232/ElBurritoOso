@@ -60,80 +60,74 @@ export default class Search extends Component {
   };
 
   render() {
-
     let arr = this.context.restaurants;
     let searchHits = [];
     let reviewSearch = this.context.reviews;
 
+  // this will make a search result list for each hit returned from search.
+  for (let i = 0; i < arr.length; i++) {
+    // sync equals place_id
+    const rateFinder = syncId => {
+      let sum = 0;
+      let avg = 0;
+      let reviewRate = [];
 
-      // this will make a search result list for each hit returned from search.
-      for (let i = 0; i < arr.length; i++) {
-        // sync equals place_id
-        const rateFinder = syncId => {
-          let sum = 0;
-          let avg = 0;
-          let reviewRate = [];
+      // finds the length of data base returned reviews
+      for (let i = 0; i < reviewSearch.length; i++) {
+        // compares the google place id to Database review place id
+        if (syncId === reviewSearch[i].restaurantId) {
+          reviewRate.push(reviewSearch[i].rating);
 
-          // finds the length of data base returned reviews
-          for (let i = 0; i < reviewSearch.length; i++) {
-            // compares the google place id to Database review place id
-            if (syncId === reviewSearch[i].restaurantId) {
-              reviewRate.push(reviewSearch[i].rating);
-
-              // adds the integers together
-              sum += reviewSearch[i].rating;
-            }
-          }
-          // divides sum by total
-          avg = sum / reviewRate.length;
-          return reviewRate.length ? (
-              <div className="circleContainer">
-                <Circle rating={avg}/>
-              </div>
-          ) : (
-              <div className="circleContainer">
-                <h3>Be the first to write a review</h3>
-              </div>
-          );
-        };
-
-        searchHits.push(
-            // iterates a new restaurant info for each hit.
-            <div className="hitItemContainer" key={i}>
-              <div className="contactInfo">
-                <h2>
-                  <Link to={`/restaurant/${this.context.restaurants[i].place_id}`}>
-                    {this.context.restaurants[i].name}
-                  </Link>
-                </h2>
-                <h4>
-                  <Link to={`/restaurant/${this.context.restaurants[i].place_id}`}>
-                    {this.context.restaurants[i].vicinity}
-                  </Link>
-                </h4>
-              </div>
-
-              <div className="circleContainer">
-                {rateFinder(this.context.restaurants[i].place_id)}
-              </div>
-            </div>
-        );
-      }
-
-
-
-
-      // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
-      const displayMap = () => {
-        if (arr.length >= 1) {
-          return (
-              <div className="mapBox">
-                <Maps/>
-              </div>
-          );
+          // adds the integers together
+          sum += reviewSearch[i].rating;
         }
-      };
+      }
+      // divides sum by total
+      avg = sum / reviewRate.length;
+      return reviewRate.length ? (
+          <div className="circleContainer">
+            <Circle rating={avg}/>
+          </div>
+      ) : (
+          <div className="circleContainer">
+            <h3>Be the first to write a review</h3>
+          </div>
+      );
+    };
 
+    searchHits.push(
+        // iterates a new restaurant info for each hit.
+        <div className="hitItemContainer" key={i}>
+          <div className="contactInfo">
+            <h2>
+              <Link to={`/restaurant/${this.context.restaurants[i].place_id}`}>
+                {this.context.restaurants[i].name}
+              </Link>
+            </h2>
+            <h4>
+              <Link to={`/restaurant/${this.context.restaurants[i].place_id}`}>
+                {this.context.restaurants[i].vicinity}
+              </Link>
+            </h4>
+          </div>
+
+          <div className="circleContainer">
+            {rateFinder(this.context.restaurants[i].place_id)}
+          </div>
+        </div>
+    );
+  }
+
+  // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
+  const displayMap = () => {
+    if (arr.length >= 1) {
+      return (
+          <div className="mapBox">
+            <Maps/>
+          </div>
+      );
+    }
+  };
 
     return (
       <main className="searchPage">
