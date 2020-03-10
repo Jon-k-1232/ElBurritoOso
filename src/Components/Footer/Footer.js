@@ -1,16 +1,13 @@
 import React from "react";
-import { SocialIcon } from "react-social-icons";
 import "./Footer.css";
 
 export default function Footer() {
   return (
     <footer>
-      <div className="socialMedia">
-        <SocialIcon network="twitter" fgColor="#fff" id="twitter" />
-        <SocialIcon network="facebook" fgColor="#fff" id="fb" />
-        <SocialIcon network="instagram" fgColor="#fff" id="insta" />
-      </div>
-      <p>Built by Jon Kimmel</p>
+        <div className='footerInfo'>
+            <h3>El Burrito Oso</h3>
+            <h5>Built by Jon Kimmel</h5>
+        </div>
     </footer>
   );
 }

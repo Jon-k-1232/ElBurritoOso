@@ -3,33 +3,8 @@ footer {
     Avenir, -apple-system, sans-serif;
 }
 
-#twitter,
-#insta,
-#fb {
-  margin: 32px 16px 16px 8px;
-}
-
-#twitter:hover {
-  cursor: pointer;
-  font-size: 10px;
-}
-
-#insta:hover {
-  cursor: pointer;
-  font-size: 10px;
-}
-
-#fb:hover {
-  cursor: pointer;
-  font-size: 10px;
-}
-
-footer p {
+.footerInfo {
   margin: 8px;
   font-weight: bolder;
 }
 
-.social-icon {
-  width: 43px !important;
-  height: 43px !important;
-}
