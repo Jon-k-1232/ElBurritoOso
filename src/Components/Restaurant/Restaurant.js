@@ -136,9 +136,9 @@ export default class Restaurant extends React.Component {
         </div>
       </main>
     ) : (
-        <div className='notFound'>
-          <h2>Loading...</h2>
-        </div>
+      <div className="notFound">
+        <h2>Loading...</h2>
+      </div>
     );
   }
 }

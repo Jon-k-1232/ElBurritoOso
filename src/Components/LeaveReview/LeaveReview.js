@@ -107,7 +107,7 @@ export default class LeaveReview extends React.Component {
         </form>
       </main>
     ) : (
-      <div className='notFound'>
+      <div className="notFound">
         <h2>Please start a new search to find only the best burritos.</h2>
       </div>
     );

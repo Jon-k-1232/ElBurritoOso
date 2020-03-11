@@ -111,7 +111,7 @@
   color: #32288594;
 }
 
-.notFound{
+.notFound {
   width: 100%;
   min-height: 79vh;
   display: flex;
@@ -130,7 +130,7 @@
     width: 300px;
   }
 
-  .notFound{
+  .notFound {
     min-height: 80vh;
   }
 }
@@ -142,7 +142,7 @@
     min-height: 84vh;
   }
 
-  .notFound{
+  .notFound {
     min-height: 84vh;
   }
 }

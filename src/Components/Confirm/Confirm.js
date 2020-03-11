@@ -53,7 +53,6 @@ export default class Confirm extends React.Component {
           <p>{tempReview.review}</p>
         </div>
 
-
         <div className="confirmButtons">
           <button type="submit" id="reviewSubButton">
             <Link to={`/restaurant/new-review/${tempReview.restaurantId}`}>
@@ -71,9 +70,9 @@ export default class Confirm extends React.Component {
         </div>
       </main>
     ) : (
-        <div className='notFound'>
-          <h2>Please start a new search to find only the best burritos.</h2>
-        </div>
+      <div className="notFound">
+        <h2>Please start a new search to find only the best burritos.</h2>
+      </div>
     );
   }
 }

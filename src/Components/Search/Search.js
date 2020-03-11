@@ -37,15 +37,20 @@ export default class Search extends Component {
         return resp.json();
       })
       .then(data => {
-        this.context.apiAddRestaurants(data.results); // sets google restaurants to context
-        this.context.apiAddReviews(data.reviews); // sets reviews, scores from DB to context
+        // sets google restaurants to context
+        this.context.apiAddRestaurants(data.results);
+        // sets reviews, scores from DB to context
+        this.context.apiAddReviews(data.reviews);
+        // sets latitude of address user typed in
         this.context.apiUserLat(
           data.userLatLong.results[0].geometry.location.lat
-        ); // sets latitude of address user typed in
+        );
+        // sets longitude of address user typed in
         this.context.apiUserLng(
           data.userLatLong.results[0].geometry.location.lng
-        ); // sets longitude of address user typed in
-        this.setState({ loading: false }); // set this in order to cause re render for development only.
+        );
+        // set this in order to cause re render for development only.
+        this.setState({ loading: false });
       })
       .catch(error => {
         alert(error);
@@ -64,38 +69,38 @@ export default class Search extends Component {
     let searchHits = [];
     let reviewSearch = this.context.reviews;
 
-  // this will make a search result list for each hit returned from search.
-  for (let i = 0; i < arr.length; i++) {
-    // sync equals place_id
-    const rateFinder = syncId => {
-      let sum = 0;
-      let avg = 0;
-      let reviewRate = [];
+    // this will make a search result list for each hit returned from search.
+    for (let i = 0; i < arr.length; i++) {
+      // sync equals place_id
+      const rateFinder = syncId => {
+        let sum = 0;
+        let avg = 0;
+        let reviewRate = [];
 
-      // finds the length of data base returned reviews
-      for (let i = 0; i < reviewSearch.length; i++) {
-        // compares the google place id to Database review place id
-        if (syncId === reviewSearch[i].restaurantId) {
-          reviewRate.push(reviewSearch[i].rating);
+        // finds the length of data base returned reviews
+        for (let i = 0; i < reviewSearch.length; i++) {
+          // compares the google place id to Database review place id
+          if (syncId === reviewSearch[i].restaurantId) {
+            reviewRate.push(reviewSearch[i].rating);
 
-          // adds the integers together
-          sum += reviewSearch[i].rating;
+            // adds the integers together
+            sum += reviewSearch[i].rating;
+          }
         }
-      }
-      // divides sum by total
-      avg = sum / reviewRate.length;
-      return reviewRate.length ? (
+        // divides sum by total
+        avg = sum / reviewRate.length;
+        return reviewRate.length ? (
           <div className="circleContainer">
-            <Circle rating={avg}/>
+            <Circle rating={avg} />
           </div>
-      ) : (
+        ) : (
           <div className="circleContainer">
             <h3>Be the first to write a review</h3>
           </div>
-      );
-    };
+        );
+      };
 
-    searchHits.push(
+      searchHits.push(
         // iterates a new restaurant info for each hit.
         <div className="hitItemContainer" key={i}>
           <div className="contactInfo">
@@ -115,19 +120,19 @@ export default class Search extends Component {
             {rateFinder(this.context.restaurants[i].place_id)}
           </div>
         </div>
-    );
-  }
-
-  // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
-  const displayMap = () => {
-    if (arr.length >= 1) {
-      return (
-          <div className="mapBox">
-            <Maps/>
-          </div>
       );
     }
-  };
+
+    // conditional rendering for map. Once at least 1 search result is found, map will populate on search screen.
+    const displayMap = () => {
+      if (arr.length >= 1) {
+        return (
+          <div className="mapBox">
+            <Maps />
+          </div>
+        );
+      }
+    };
 
     return (
       <main className="searchPage">
