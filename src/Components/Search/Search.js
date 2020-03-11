@@ -89,6 +89,8 @@ export default class Search extends Component {
         }
         // divides sum by total
         avg = sum / reviewRate.length;
+
+        // returns conditional render, should return a review circle with score, or if no reviews, then text
         return reviewRate.length ? (
           <div className="circleContainer">
             <Circle rating={avg} />
