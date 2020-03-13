@@ -5,6 +5,8 @@ import bino from "../images/bino.png";
 import ebook from "../images/ebook.png";
 import comment from "../images/comment.png";
 
+//------------------  Landing page  ------------------\\
+
 export default class Home extends React.Component {
   render() {
     return (

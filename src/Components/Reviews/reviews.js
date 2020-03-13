@@ -2,8 +2,9 @@ import React from "react";
 import "../Reviews/reviews.css";
 import Circle from "../ReviewCircle/Circle.js";
 
+//------------------  Generates user review text, calls the review circle  ------------------\\
+
 export default function Reviews(props) {
-  // generates user review text and the review circle. This displays on the selected restaurant page
   return (
     <div className="reviewContainer">
       <div className="reviewText">

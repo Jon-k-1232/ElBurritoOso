@@ -4,6 +4,8 @@ import AppContext from "../../Context";
 import config from "../../config.js";
 import "./Confirm.css";
 
+//------------------  Confirm a review page.  ------------------\\
+
 export default class Confirm extends React.Component {
   static contextType = AppContext;
 

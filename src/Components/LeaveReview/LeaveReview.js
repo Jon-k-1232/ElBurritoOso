@@ -2,6 +2,8 @@ import React from "react";
 import "./LeaveReview.css";
 import AppContext from "../../Context.js";
 
+//------------------  Leave a review page.  ------------------\\
+
 export default class LeaveReview extends React.Component {
   static contextType = AppContext;
 
@@ -80,7 +82,7 @@ export default class LeaveReview extends React.Component {
         </div>
 
         <form className="newReviewForm" onSubmit={this.handleSubmit}>
-          <p>Give it a score.</p>
+          <p>Give it a score.*</p>
           <input
             id="ratingInput"
             type="number"
@@ -91,12 +93,12 @@ export default class LeaveReview extends React.Component {
             onChange={e => this.updateRate(e.target.value, restaurant)}
             required
           />
-          <p>Tell us what you think.</p>
+          <p>Tell us what you think.*</p>
           <textarea
             id="reviewComment"
             type="text"
             wrap="soft"
-            placeholder="Write a review..."
+            placeholder="Write a review in 500 characters..."
             maxLength="500"
             onChange={e => this.updateReview(e.target.value, restaurant)}
             required

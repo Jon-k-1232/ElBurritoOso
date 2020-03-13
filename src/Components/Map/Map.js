@@ -6,6 +6,8 @@ import burritoIcon from "../images/burritoIcon.png";
 import pin from "../images/pin.png";
 import "../Map/Map.css";
 
+//-----------------  Google map that is populated with multiple restaurant location on search page  -----------------\\
+
 class Maps extends React.Component {
   static contextType = AppContext;
 

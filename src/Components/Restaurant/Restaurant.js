@@ -7,6 +7,8 @@ import "./Restaurant.css";
 import config from "../../config.js";
 import { StaticGoogleMap, Marker } from "react-static-google-map";
 
+//------------------  Restaurant details page.  ------------------\\
+
 export default class Restaurant extends React.Component {
   static contextType = AppContext;
 
@@ -41,7 +43,7 @@ export default class Restaurant extends React.Component {
       .then(data => {
         this.setState({ reviews: data.reviews });
         this.setState({ restaurant: data.results });
-
+        console.log(data.results)
         //needed in order to leave a new review if route is saved
         this.context.apiLocationShare(data.results);
       })
@@ -122,6 +124,7 @@ export default class Restaurant extends React.Component {
             <div className="restaurantInfo">
               <h2>{restaurant.name}</h2>
               <h4>{restaurant.formatted_address}</h4>
+              <h5>{restaurant.formatted_phone_number}</h5>
             </div>
             <div className="resButtons">
               {rateAvg({ ...reviews })}

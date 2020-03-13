@@ -6,6 +6,8 @@ import "./Search.css";
 import AppContext from "../../Context.js";
 import Maps from "../Map/Map.js";
 
+//------------------  Search for a restaurant page.  ------------------\\
+
 export default class Search extends Component {
   static contextType = AppContext;
 
